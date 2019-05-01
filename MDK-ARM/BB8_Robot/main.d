@@ -1,5 +1,4 @@
 bb8_robot\main.o: ../Src/main.c
-bb8_robot\main.o: ../Inc/includes.h
 bb8_robot\main.o: ../Inc/main.h
 bb8_robot\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 bb8_robot\main.o: ../Inc/stm32f4xx_hal_conf.h
@@ -30,6 +29,8 @@ bb8_robot\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 bb8_robot\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 bb8_robot\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 bb8_robot\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
+bb8_robot\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+bb8_robot\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 bb8_robot\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 bb8_robot\main.o: D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\Bin\..\include\stddef.h
 bb8_robot\main.o: ../Inc/FreeRTOSConfig.h
@@ -40,11 +41,10 @@ bb8_robot\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_C
 bb8_robot\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
 bb8_robot\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
 bb8_robot\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
-bb8_robot\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 bb8_robot\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 bb8_robot\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 bb8_robot\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 bb8_robot\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+bb8_robot\main.o: ../Inc/dma.h
+bb8_robot\main.o: ../Inc/usart.h
 bb8_robot\main.o: ../Inc/gpio.h
-bb8_robot\main.o: ..\Tasks\Inc\Task_LED.h
-bb8_robot\main.o: ../Inc/includes.h

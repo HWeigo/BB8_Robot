@@ -47,8 +47,12 @@
   ******************************************************************************
   */
 /* Includes ------------------------------------------------------------------*/
-
-#include "includes.h"
+#include "main.h"
+#include "stm32f4xx_hal.h"
+#include "cmsis_os.h"
+#include "dma.h"
+#include "usart.h"
+#include "gpio.h"
 
 /* USER CODE BEGIN Includes */
 
@@ -103,6 +107,8 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -118,7 +124,6 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 	
-	init_LED();
   while (1)
   {
 
@@ -131,7 +136,6 @@ int main(void)
   /* USER CODE END 3 */
 
 }
-
 
 /**
   * @brief System Clock Configuration

@@ -30,6 +30,7 @@ bb8_robot\task_led.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 bb8_robot\task_led.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 bb8_robot\task_led.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 bb8_robot\task_led.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
+bb8_robot\task_led.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 bb8_robot\task_led.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 bb8_robot\task_led.o: D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\Bin\..\include\stddef.h
 bb8_robot\task_led.o: ../Inc/FreeRTOSConfig.h
