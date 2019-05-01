@@ -583,6 +583,16 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Drivers</GroupName>
+          <Files>
+            <File>
+              <FileName>Drivers_uartgyro.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Tasks\Src\Drivers_uartgyro.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>

@@ -34,6 +34,7 @@
 "bb8_robot\timers.o"
 "bb8_robot\cmsis_os.o"
 "bb8_robot\task_led.o"
+"bb8_robot\drivers_uartgyro.o"
 --library_type=microlib --strict --scatter "BB8_Robot\BB8_Robot.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

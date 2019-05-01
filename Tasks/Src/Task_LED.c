@@ -11,7 +11,8 @@ void init_LED(void)
 		nos_delay(10000);
 }
 
-
+uint16_t debug;
+/* Task_LED function */
 void Task_LED(void const * argument)
 {
 
@@ -26,7 +27,7 @@ void Task_LED(void const * argument)
 		HAL_GPIO_WritePin(GPIOF,LED2_Pin,GPIO_PIN_RESET);
 		osDelay(200);
 		
-    osDelay(1);
+		debug++;
   }
   /* USER CODE END Task_LED */
 }

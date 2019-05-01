@@ -221,12 +221,14 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   * @param  line: The line in file as a number.
   * @retval None
   */
+uint8_t error_flag =0;
 void _Error_Handler(char *file, int line)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
   /* User can add his own implementation to report the HAL error return state */
   while(1)
   {
+		error_flag = 1;
   }
   /* USER CODE END Error_Handler_Debug */
 }
