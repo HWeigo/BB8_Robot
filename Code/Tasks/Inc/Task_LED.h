@@ -11,7 +11,7 @@
 #include "includes.h"
 
 void Task_LED(void const * argument);
-void init_LED(void);
+void InitLED(void);
 
 #endif /*__ TASK_LED_H */
 

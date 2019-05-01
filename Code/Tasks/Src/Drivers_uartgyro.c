@@ -1,14 +1,11 @@
 #include "includes.h"
 
 uint8_t tmp_gyro;
-uint8_t debug_flag=0;
 
 void InitGyroUart(void)
 {
-	debug_flag = 1;
 	if(HAL_UART_Receive_DMA(&GYRO_UART,&tmp_gyro,1) != HAL_OK)
 	{
-		debug_flag =2;
 		Error_Handler();
 	}
 }
