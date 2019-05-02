@@ -17,14 +17,21 @@ uint8_t gyroID = 0;
 float gyroXAngle,gyroYAngle,gyroZAngle;
 float gyroXspeed,gyroYspeed,gyroZspeed;
 
-
 void gyroUartRxCpltCallback(void)
 {
+	gyroBuffer[gyroBuffercnt] = tmp_gyro;
+	
+	
+	
 	if(gyro_receiving)
 	{
 		gyroBuffer[gyroBuffercnt] = tmp_gyro;
 		gyroBuffercnt++;
-		if(gyroBuffercnt > 20)gyro_receiving = 0;
+		if(gyroBuffercnt > 20)
+		{
+			gyro_receiving = 0;
+			gyroBuffercnt = 0;
+		}
 		if(gyroBuffercnt == 11)
 		{
 			if(!sumCheck())
@@ -43,17 +50,24 @@ void gyroUartRxCpltCallback(void)
 				}
 			}
 			gyro_receiving = 0;
+			gyroBuffercnt = 0;
 		}
 	}
 	else 
 	{
-		if(tmp_gyro == 0x55)
+		if(gyroBuffercnt == 0 && tmp_gyro == 0x55)
 		{
 			gyro_receiving = 1;
-			gyroBuffercnt = 0;
 			gyroBuffer[gyroBuffercnt] = tmp_gyro;
-			gyroBuffercnt++;
+			++gyroBuffercnt;
 		}
+//		if(tmp_gyro == 0x55)
+//		{
+//			gyro_receiving = 1;
+//			gyroBuffercnt = 0;
+//			gyroBuffer[gyroBuffercnt] = tmp_gyro;
+//			gyroBuffercnt++;
+//		}
 	}
 	if(HAL_UART_Receive_DMA(&GYRO_UART, &tmp_gyro, 1) != HAL_OK)
 		{
