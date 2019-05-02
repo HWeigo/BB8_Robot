@@ -47,7 +47,6 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
-
 #include "includes.h"
 
 /* USER CODE BEGIN Includes */     
@@ -56,6 +55,7 @@
 
 /* Variables -----------------------------------------------------------------*/
 osThreadId TASK_LEDHandle;
+osThreadId TASK_GRYOHandle;
 
 /* USER CODE BEGIN Variables */
 
@@ -63,6 +63,7 @@ osThreadId TASK_LEDHandle;
 
 /* Function prototypes -------------------------------------------------------*/
 void Task_LED(void const * argument);
+void Task_GRYO(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -77,6 +78,7 @@ void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
 	InitGyroUart();
+	InitLED();
   /* USER CODE END Init */
 
   /* USER CODE BEGIN RTOS_MUTEX */
@@ -96,6 +98,10 @@ void MX_FREERTOS_Init(void) {
   osThreadDef(TASK_LED, Task_LED, osPriorityBelowNormal, 0, 128);
   TASK_LEDHandle = osThreadCreate(osThread(TASK_LED), NULL);
 
+  /* definition and creation of TASK_GRYO */
+  osThreadDef(TASK_GRYO, Task_GRYO, osPriorityAboveNormal, 0, 128);
+  TASK_GRYOHandle = osThreadCreate(osThread(TASK_GRYO), NULL);
+
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
@@ -104,6 +110,7 @@ void MX_FREERTOS_Init(void) {
   /* add queues, ... */
   /* USER CODE END RTOS_QUEUES */
 }
+
 
 
 
