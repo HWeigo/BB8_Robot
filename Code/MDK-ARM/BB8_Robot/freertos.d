@@ -50,7 +50,9 @@ bb8_robot\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.
 bb8_robot\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 bb8_robot\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 bb8_robot\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+bb8_robot\freertos.o: ../Inc/dma.h
 bb8_robot\freertos.o: ../Inc/gpio.h
 bb8_robot\freertos.o: ..\Tasks\Inc\Task_LED.h
 bb8_robot\freertos.o: ../Inc/includes.h
+bb8_robot\freertos.o: ..\Tasks\Inc\Task_gyro.h
 bb8_robot\freertos.o: ..\Tasks\Inc\Drivers_uartgyro.h

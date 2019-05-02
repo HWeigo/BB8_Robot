@@ -580,6 +580,11 @@
               <FileType>1</FileType>
               <FilePath>..\Tasks\Src\Task_LED.c</FilePath>
             </File>
+            <File>
+              <FileName>Task_gyro.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Tasks\Src\Task_gyro.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

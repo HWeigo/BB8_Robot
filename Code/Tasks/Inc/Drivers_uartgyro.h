@@ -5,5 +5,5 @@
 
 void InitGyroUart(void);
 void gyroUartRxCpltCallback(void);
-uint8_t sumCheck(void);
+
 #endif

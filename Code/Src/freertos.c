@@ -113,17 +113,7 @@ void MX_FREERTOS_Init(void) {
 
 
 
-/* Task_GRYO function */
-void Task_GRYO(void const * argument)
-{
-  /* USER CODE BEGIN Task_GRYO */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END Task_GRYO */
-}
+
 
 /* USER CODE BEGIN Application */
      
