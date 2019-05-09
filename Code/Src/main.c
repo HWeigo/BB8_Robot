@@ -47,7 +47,15 @@
   ******************************************************************************
   */
 /* Includes ------------------------------------------------------------------*/
+//#include "main.h"
+//#include "stm32f4xx_hal.h"
+//#include "cmsis_os.h"
+//#include "dma.h"
+//#include "tim.h"
+//#include "usart.h"
+//#include "gpio.h"
 #include "includes.h"
+
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
@@ -103,8 +111,10 @@ int main(void)
   MX_GPIO_Init();
   MX_DMA_Init();
   MX_USART1_UART_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
 
+  HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_1);
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */

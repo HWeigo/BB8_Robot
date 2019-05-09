@@ -23,8 +23,10 @@
 #include "cmsis_os.h"
 #include "dma.h"
 #include "gpio.h"
+#include "tim.h"
 #include "usart.h"
 #include "Task_LED.h"
+#include "Task_servo.h"
 #include "Task_gyro.h"
 #include "Drivers_uartgyro.h"
 
