@@ -125,11 +125,11 @@ void MX_FREERTOS_Init(void) {
 //{
 
 //  /* USER CODE BEGIN Task_LED */
-//  /* Infinite loop */
-//  for(;;)
-//  {
-//    osDelay(1);
-//  }
+////  /* Infinite loop */
+////  for(;;)
+////  {
+////    osDelay(1);
+////  }
 //  /* USER CODE END Task_LED */
 //}
 
@@ -137,23 +137,23 @@ void MX_FREERTOS_Init(void) {
 //void Task_GRYO(void const * argument)
 //{
 //  /* USER CODE BEGIN Task_GRYO */
-//  /* Infinite loop */
-//  for(;;)
-//  {
-//    osDelay(1);
-//  }
+////  /* Infinite loop */
+////  for(;;)
+////  {
+////    osDelay(1);
+////  }
 //  /* USER CODE END Task_GRYO */
 //}
 
-/* Task_Servo function */
+///* Task_Servo function */
 //void Task_Servo(void const * argument)
 //{
 //  /* USER CODE BEGIN Task_Servo */
-//  /* Infinite loop */
-//  for(;;)
-//  {
-//    osDelay(1);
-//  }
+////  /* Infinite loop */
+////  for(;;)
+////  {
+////    osDelay(1);
+////  }
 //  /* USER CODE END Task_Servo */
 //}
 
