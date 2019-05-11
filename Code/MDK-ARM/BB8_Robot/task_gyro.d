@@ -52,7 +52,9 @@ bb8_robot\task_gyro.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr
 bb8_robot\task_gyro.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 bb8_robot\task_gyro.o: ../Inc/dma.h
 bb8_robot\task_gyro.o: ../Inc/gpio.h
+bb8_robot\task_gyro.o: ../Inc/tim.h
 bb8_robot\task_gyro.o: ..\Tasks\Inc\Task_LED.h
 bb8_robot\task_gyro.o: ../Inc/includes.h
+bb8_robot\task_gyro.o: ..\Tasks\Inc\Task_servo.h
 bb8_robot\task_gyro.o: ..\Tasks\Inc\Task_gyro.h
 bb8_robot\task_gyro.o: ..\Tasks\Inc\Drivers_uartgyro.h

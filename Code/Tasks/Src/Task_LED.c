@@ -30,6 +30,7 @@ void InitLED(void)
 
 //LED任务运行在最低优先级
 /* Task_LED function */
+
 void Task_LED(void const * argument)
 {
 
@@ -40,6 +41,7 @@ void Task_LED(void const * argument)
 		LED1ON();
 		LED2TOGGLE();
 		osDelay(400);		
+
   }
   /* USER CODE END Task_LED */
 }

@@ -47,6 +47,9 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
+//#include "FreeRTOS.h"
+//#include "task.h"
+//#include "cmsis_os.h"
 #include "includes.h"
 
 /* USER CODE BEGIN Includes */     
@@ -56,6 +59,7 @@
 /* Variables -----------------------------------------------------------------*/
 osThreadId TASK_LEDHandle;
 osThreadId TASK_GRYOHandle;
+osThreadId TASK_SERVOHandle;
 
 /* USER CODE BEGIN Variables */
 
@@ -64,6 +68,7 @@ osThreadId TASK_GRYOHandle;
 /* Function prototypes -------------------------------------------------------*/
 void Task_LED(void const * argument);
 void Task_GRYO(void const * argument);
+void Task_Servo(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -102,6 +107,10 @@ void MX_FREERTOS_Init(void) {
   osThreadDef(TASK_GRYO, Task_GRYO, osPriorityAboveNormal, 0, 128);
   TASK_GRYOHandle = osThreadCreate(osThread(TASK_GRYO), NULL);
 
+  /* definition and creation of TASK_SERVO */
+  osThreadDef(TASK_SERVO, Task_Servo, osPriorityIdle, 0, 128);
+  TASK_SERVOHandle = osThreadCreate(osThread(TASK_SERVO), NULL);
+
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
@@ -111,9 +120,42 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE END RTOS_QUEUES */
 }
 
+/* Task_LED function */
+//void Task_LED(void const * argument)
+//{
 
+//  /* USER CODE BEGIN Task_LED */
+////  /* Infinite loop */
+////  for(;;)
+////  {
+////    osDelay(1);
+////  }
+//  /* USER CODE END Task_LED */
+//}
 
+///* Task_GRYO function */
+//void Task_GRYO(void const * argument)
+//{
+//  /* USER CODE BEGIN Task_GRYO */
+////  /* Infinite loop */
+////  for(;;)
+////  {
+////    osDelay(1);
+////  }
+//  /* USER CODE END Task_GRYO */
+//}
 
+///* Task_Servo function */
+//void Task_Servo(void const * argument)
+//{
+//  /* USER CODE BEGIN Task_Servo */
+////  /* Infinite loop */
+////  for(;;)
+////  {
+////    osDelay(1);
+////  }
+//  /* USER CODE END Task_Servo */
+//}
 
 /* USER CODE BEGIN Application */
      
