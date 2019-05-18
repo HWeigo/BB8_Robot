@@ -63,14 +63,6 @@
 #define LED1_GPIO_Port GPIOF
 #define LED2_Pin GPIO_PIN_10
 #define LED2_GPIO_Port GPIOF
-#define DI_Pin GPIO_PIN_12
-#define DI_GPIO_Port GPIOB
-#define DO_Pin GPIO_PIN_13
-#define DO_GPIO_Port GPIOB
-#define CS_Pin GPIO_PIN_14
-#define CS_GPIO_Port GPIOB
-#define CLK_Pin GPIO_PIN_15
-#define CLK_GPIO_Port GPIOB
 
 /* ########################## Assert Selection ############################## */
 /**

@@ -25,12 +25,9 @@
 #include "gpio.h"
 #include "tim.h"
 #include "usart.h"
-
 #include "Task_LED.h"
 #include "Task_servo.h"
 #include "Task_gyro.h"
-#include "Task_ps2.h"
-
 #include "Drivers_uartgyro.h"
 
 #endif /* __INCLUDES_H */
