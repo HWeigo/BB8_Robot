@@ -47,10 +47,8 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
-//#include "FreeRTOS.h"
-//#include "task.h"
-//#include "cmsis_os.h"
 #include "includes.h"
+
 
 /* USER CODE BEGIN Includes */     
 
@@ -60,6 +58,7 @@
 osThreadId TASK_LEDHandle;
 osThreadId TASK_GRYOHandle;
 osThreadId TASK_SERVOHandle;
+osThreadId TASK_PS2Handle;
 
 /* USER CODE BEGIN Variables */
 
@@ -69,6 +68,7 @@ osThreadId TASK_SERVOHandle;
 void Task_LED(void const * argument);
 void Task_GRYO(void const * argument);
 void Task_Servo(void const * argument);
+void Task_ps2(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -108,8 +108,12 @@ void MX_FREERTOS_Init(void) {
   TASK_GRYOHandle = osThreadCreate(osThread(TASK_GRYO), NULL);
 
   /* definition and creation of TASK_SERVO */
-  osThreadDef(TASK_SERVO, Task_Servo, osPriorityIdle, 0, 128);
+  osThreadDef(TASK_SERVO, Task_Servo, osPriorityNormal, 0, 128);
   TASK_SERVOHandle = osThreadCreate(osThread(TASK_SERVO), NULL);
+
+  /* definition and creation of TASK_PS2 */
+  osThreadDef(TASK_PS2, Task_ps2, osPriorityAboveNormal, 0, 1024);
+  TASK_PS2Handle = osThreadCreate(osThread(TASK_PS2), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -125,11 +129,11 @@ void MX_FREERTOS_Init(void) {
 //{
 
 //  /* USER CODE BEGIN Task_LED */
-////  /* Infinite loop */
-////  for(;;)
-////  {
-////    osDelay(1);
-////  }
+//////////////  /* Infinite loop */
+//////////////  for(;;)
+//////////////  {
+//////////////    osDelay(1);
+//////////////  }
 //  /* USER CODE END Task_LED */
 //}
 
@@ -137,11 +141,11 @@ void MX_FREERTOS_Init(void) {
 //void Task_GRYO(void const * argument)
 //{
 //  /* USER CODE BEGIN Task_GRYO */
-////  /* Infinite loop */
-////  for(;;)
-////  {
-////    osDelay(1);
-////  }
+//////////////  /* Infinite loop */
+//////////////  for(;;)
+//////////////  {
+//////////////    osDelay(1);
+//////////////  }
 //  /* USER CODE END Task_GRYO */
 //}
 
@@ -149,12 +153,24 @@ void MX_FREERTOS_Init(void) {
 //void Task_Servo(void const * argument)
 //{
 //  /* USER CODE BEGIN Task_Servo */
-////  /* Infinite loop */
-////  for(;;)
-////  {
-////    osDelay(1);
-////  }
+//////////////  /* Infinite loop */
+//////////////  for(;;)
+//////////////  {
+//////////////    osDelay(1);
+//////////////  }
 //  /* USER CODE END Task_Servo */
+//}
+
+///* Task_ps2 function */
+//void Task_ps2(void const * argument)
+//{
+//  /* USER CODE BEGIN Task_ps2 */
+////////  /* Infinite loop */
+////////  for(;;)
+////////  {
+////////    osDelay(1);
+////////  }
+//  /* USER CODE END Task_ps2 */
 //}
 
 /* USER CODE BEGIN Application */

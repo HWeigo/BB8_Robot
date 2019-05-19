@@ -57,4 +57,5 @@ bb8_robot\freertos.o: ..\Tasks\Inc\Task_LED.h
 bb8_robot\freertos.o: ../Inc/includes.h
 bb8_robot\freertos.o: ..\Tasks\Inc\Task_servo.h
 bb8_robot\freertos.o: ..\Tasks\Inc\Task_gyro.h
+bb8_robot\freertos.o: ..\Tasks\Inc\Task_ps2.h
 bb8_robot\freertos.o: ..\Tasks\Inc\Drivers_uartgyro.h

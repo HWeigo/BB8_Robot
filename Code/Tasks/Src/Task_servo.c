@@ -3,9 +3,9 @@
   * File Name          : Task_servo.c
   * Description        : 舵机控制（普通优先级）
 	* 舵机信号线 -> PA0
-	* 舵机PWM接在普通定时器TIM2上，对应始时钟为APB2:16MHZ。舵机驱动需要产生一个
-	* 20ms的脉冲信号，采用预分频160-1，自动重载周期2000-1。
-	* PWM频率 = 16 * 10^6 / 160 / 2000 = 50HZ。
+	* 舵机PWM接在普通定时器TIM2上，对应始时钟为APB2:48MHZ。舵机驱动需要产生一个
+	* 20ms的脉冲信号，采用预分频480-1，自动重载周期2000-1。
+	* PWM频率 = 48 * 10^6 / 480 / 2000 = 50HZ。
 	* 注意，舵机工作电压为4.8V-6V。
   ******************************************************************************
 */
@@ -31,7 +31,6 @@ uint16_t DutyCycle_STOP = 147;
 #define setServoSpeed(x) __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, DutyCycle_STOP - x);
 
 uint16_t rotateSpeed = 0; //范围+-100
-uint8_t tmpflag=1;
 ServoCmd_e ServoCmd = Mode_1;
 void Task_Servo(void const * argument)
 {
