@@ -49,7 +49,7 @@ void Task_GRYO(void const * argument)
 					
 			gyroIsReady = 0;
 		}
-		osDelay(2);
+		osDelay(10);
   }
 }
 

@@ -13,6 +13,7 @@ uint8_t flag = 0,x=0;
 uint8_t key;
 int16_t speed;
 int16_t swerve;
+int16_t servoSwerve;
 void Task_ps2(void const * argument)
 {
   /* USER CODE BEGIN Task_ps2 */
@@ -20,13 +21,16 @@ void Task_ps2(void const * argument)
 	HAL_Delay(1000);
   while(1)
   {
+		//由于PS2手柄信号接收需要us级别延迟，故需要将所有中断关闭！！否则会导致系统宕机
+			HAL_NVIC_DisableIRQ(DMA2_Stream2_IRQn);	
 		
-		//PS2_ReadData();
 		key = PS2_DataKey();
 		speed = -(PS2_AnologData(PSS_LY)-127);	   
-		swerve = (PS2_AnologData(PSS_LX)-127)-1;	   
+		swerve = (PS2_AnologData(PSS_LX)-127)-1;	
+		servoSwerve = (PS2_AnologData(PSS_RX)-127)-1;
 		
-    osDelay(500);
+		  HAL_NVIC_EnableIRQ(DMA2_Stream2_IRQn); //重启使能中断
+    osDelay(10);
   }
   /* USER CODE END Task_ps2 */
 }
@@ -89,7 +93,7 @@ void PS2_Cmd(uint8_t CMD)
 		if(DI())
 			Data[1] = ref|Data[1];
 	}
-	delay_us(16);
+	delay_us(16); //16
 }
 
 //判断是否为红灯模式
