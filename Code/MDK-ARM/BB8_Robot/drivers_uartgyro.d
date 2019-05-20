@@ -30,6 +30,7 @@ bb8_robot\drivers_uartgyro.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_
 bb8_robot\drivers_uartgyro.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h
 bb8_robot\drivers_uartgyro.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h
 bb8_robot\drivers_uartgyro.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
+bb8_robot\drivers_uartgyro.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h
 bb8_robot\drivers_uartgyro.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 bb8_robot\drivers_uartgyro.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 bb8_robot\drivers_uartgyro.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
@@ -53,6 +54,7 @@ bb8_robot\drivers_uartgyro.o: ../Middlewares/Third_Party/FreeRTOS/Source/include
 bb8_robot\drivers_uartgyro.o: ../Inc/dma.h
 bb8_robot\drivers_uartgyro.o: ../Inc/gpio.h
 bb8_robot\drivers_uartgyro.o: ../Inc/tim.h
+bb8_robot\drivers_uartgyro.o: ../Inc/iwdg.h
 bb8_robot\drivers_uartgyro.o: ..\Tasks\Inc\Task_LED.h
 bb8_robot\drivers_uartgyro.o: ../Inc/includes.h
 bb8_robot\drivers_uartgyro.o: ..\Tasks\Inc\Task_servo.h

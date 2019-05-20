@@ -25,6 +25,7 @@ bb8_robot\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_
 bb8_robot\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h
 bb8_robot\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h
 bb8_robot\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
+bb8_robot\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h
 bb8_robot\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 bb8_robot\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 bb8_robot\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h

@@ -24,6 +24,7 @@
 #include "dma.h"
 #include "gpio.h"
 #include "tim.h"
+#include "iwdg.h"
 #include "usart.h"
 
 #include "Task_LED.h"

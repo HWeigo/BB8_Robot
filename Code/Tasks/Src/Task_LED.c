@@ -40,7 +40,10 @@ void Task_LED(void const * argument)
   {
 		LED1ON();
 		LED2TOGGLE();
-		osDelay(400);		
+		
+		HAL_IWDG_Refresh(&hiwdg); //Î¹¹·
+		
+		osDelay(300);		
 
   }
   /* USER CODE END Task_LED */
