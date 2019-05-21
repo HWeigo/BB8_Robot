@@ -2,12 +2,12 @@
 
 //LED1:PF9 LED2:PF10
 //低电平点亮
-#define LED1ON() 		HAL_GPIO_WritePin(GPIOF,LED1_Pin,GPIO_PIN_RESET);
-#define LED20ON() 		HAL_GPIO_WritePin(GPIOF,LED2_Pin,GPIO_PIN_RESET);
-#define LED1OFF() 		HAL_GPIO_WritePin(GPIOF,LED1_Pin,GPIO_PIN_SET);
-#define LED2OFF() 		HAL_GPIO_WritePin(GPIOF,LED2_Pin,GPIO_PIN_SET);
-#define LED1TOGGLE() 		HAL_GPIO_TogglePin(LED1_GPIO_Port,LED1_Pin);
-#define LED2TOGGLE() 		HAL_GPIO_TogglePin(LED2_GPIO_Port,LED2_Pin);
+#define LED1ON() 		HAL_GPIO_WritePin(GPIOF,LED1_Pin,GPIO_PIN_RESET)
+#define LED20ON() 		HAL_GPIO_WritePin(GPIOF,LED2_Pin,GPIO_PIN_RESET)
+#define LED1OFF() 		HAL_GPIO_WritePin(GPIOF,LED1_Pin,GPIO_PIN_SET)
+#define LED2OFF() 		HAL_GPIO_WritePin(GPIOF,LED2_Pin,GPIO_PIN_SET)
+#define LED1TOGGLE() 		HAL_GPIO_TogglePin(LED1_GPIO_Port,LED1_Pin)
+#define LED2TOGGLE() 		HAL_GPIO_TogglePin(LED2_GPIO_Port,LED2_Pin)
 
 //初始化闪灯
 uint8_t debug_flag=0;
@@ -40,8 +40,28 @@ void Task_LED(void const * argument)
   {
 		LED1ON();
 		LED2TOGGLE();
-		osDelay(400);		
+		
+		HAL_IWDG_Refresh(&hiwdg); //喂狗
+		
+		osDelay(300);		
 
   }
   /* USER CODE END Task_LED */
 }
+
+void delay_us(uint16_t us)
+{
+    uint16_t differ=0xffff-us-5;
+
+    HAL_TIM_Base_Start(&htim14);
+
+    __HAL_TIM_SetCounter(&htim14,differ);
+
+    while(differ<0xffff-5)
+    {
+        differ=__HAL_TIM_GetCounter(&htim14);
+    }
+
+    HAL_TIM_Base_Stop(&htim14);
+}
+
