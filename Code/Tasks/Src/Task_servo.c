@@ -7,6 +7,7 @@
 	* 20ms的脉冲信号，采用预分频480-1，自动重载周期2000-1。
 	* PWM频率 = 48 * 10^6 / 480 / 2000 = 50HZ。
 	* 注意，舵机工作电压为4.8V-6V。
+	* 信号线 -> PA0
   ******************************************************************************
 */
 
@@ -24,50 +25,65 @@ uint16_t DutyCycle_STOP = 150;
 #endif 
 //MG995：147停止 <147顺时针 >147逆时针
 #ifdef MG995
-uint16_t DutyCycle_STOP = 147;
+uint16_t DutyCycle_STOP = 150; //零点标定似乎与电池电量（电压）有关
 #endif 
 
 //360度模拟舵机速度控制 x>0：顺时针 x<0：逆时针
-#define setServoSpeed(x) __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, DutyCycle_STOP - x);
+#define setServoSpeed(x) __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, DutyCycle_STOP - x)
+#define setServoStop() __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, DutyCycle_STOP)
 
 uint16_t rotateSpeed = 0; //范围+-100
 ServoCmd_e ServoCmd = Mode_1;
+extern uint8_t key;
+extern int16_t servoSwerve;
 void Task_Servo(void const * argument)
 {
-  /* USER CODE BEGIN Task_Servo */
-  /* Infinite loop */
+
+	setServoSpeed(0);
   while(1)
   {
-		switch(ServoCmd)
+		if(key == 0 && servoSwerve == 0)
 		{
-			case Mode_1:
-			{
-				setServoSpeed(-20);
-				osDelay(3000);
-				ServoCmd = Stop;
-			}break;
-			case Stop:
-			{
-				__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, DutyCycle_STOP);
-			}break;
-			default:
-				break;
+			setServoSpeed(0);
 		}
-//		
-//		if (tmpflag)
-//	  {
-//		  dutyCycle ++;
-//		  __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, dutyCycle);
-//			if(dutyCycle == 147+10) tmpflag =0;
-//	  }
-//	  else
-//	  {
-//		  dutyCycle --;
-//		  __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, dutyCycle);
-//			if(dutyCycle == 147-10) tmpflag =1;
-//	  }
-//		
-    osDelay(400);
+		else
+		{
+			setServoSpeed(0);
+			switch(key)
+			{
+				case PSB_TRIANGLE:
+				{
+					setServoSpeed(20);
+					osDelay(200);
+					setServoSpeed(-20);
+					osDelay(200);
+					setServoSpeed(0);
+				}break;
+				default:
+					break;
+			}
+			if(PS2_RedLight())
+			{
+				setServoSpeed(servoSwerve/127*25);
+			}
+		}
+//		switch(ServoCmd)
+//		{
+//			case Mode_1:
+//			{
+//				setServoSpeed(-20);
+//				osDelay(3000);
+//				ServoCmd = Stop;
+//			}break;
+//			case Stop:
+//			{
+//				__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, DutyCycle_STOP);
+//			}break;
+//			default:
+//				break;
+//		}
+
+    osDelay(50);
   }
   /* USER CODE END Task_Servo */
 }

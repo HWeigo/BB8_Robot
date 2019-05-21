@@ -11,9 +11,9 @@
 
 uint8_t flag = 0,x=0;
 uint8_t key;
-int16_t speed;
-int16_t swerve;
-int16_t servoSwerve;
+int16_t speed = 0;
+int16_t swerve = 0;
+int16_t servoSwerve = 0;
 void Task_ps2(void const * argument)
 {
   /* USER CODE BEGIN Task_ps2 */
@@ -97,16 +97,18 @@ void PS2_Cmd(uint8_t CMD)
 }
 
 //判断是否为红灯模式
-//返回值；0，红灯模式
+//返回值；1，红灯模式
 //		  其他，其他模式
 uint8_t PS2_RedLight(void)
 {
+	HAL_NVIC_DisableIRQ(DMA2_Stream2_IRQn);		
 	CS_L();
 	PS2_Cmd(Comd[0]);  //开始命令
 	PS2_Cmd(Comd[1]);  //请求数据
 	CS_H();
-	if( Data[1] == 0X73)   return 0 ;
-	else return 1;
+	HAL_NVIC_DisableIRQ(DMA2_Stream2_IRQn);	
+	if( Data[1] == 0X73)   return 1 ;
+	else return 0;
 
 }
 //读取手柄数据
