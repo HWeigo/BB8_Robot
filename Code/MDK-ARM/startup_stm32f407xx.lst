@@ -868,10 +868,12 @@ ARM Macro Assembler    Page 14
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
 erwork --depend=bb8_robot\startup_stm32f407xx.d -obb8_robot\startup_stm32f407xx
-.o -I..\\Inc -IE:\Users\P51\Documents\GitHub\BB8_Robot\Code\MDK-ARM\RTE -IC:\Ke
-il_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include --predefine="__MICROLIB SETA 1" --
-predefine="__UVISION_VERSION SETA 514" --predefine="_RTE_ SETA 1" --list=startu
-p_stm32f407xx.lst startup_stm32f407xx.s
+.o -I..\\Inc -I.\RTE\_BB8_Robot -I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\ARM\
+CMSIS\5.4.0\CMSIS\Core\Include" -I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\Keil
+\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include" --predefine="_
+_MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 524" --predefine="_RTE_ S
+ETA 1" --predefine="STM32F407xx SETA 1" --list=startup_stm32f407xx.lst startup_
+stm32f407xx.s
 
 
 
@@ -1956,4 +1958,4 @@ Symbol: __main
       At line 190 in file startup_stm32f407xx.s
 Comment: __main used once
 2 symbols
-444 symbols in table
+445 symbols in table
