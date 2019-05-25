@@ -63,6 +63,8 @@
 #define LED1_GPIO_Port GPIOF
 #define LED2_Pin GPIO_PIN_10
 #define LED2_GPIO_Port GPIOF
+#define HCSensor_Pin GPIO_PIN_14
+#define HCSensor_GPIO_Port GPIOE
 #define DI_Pin GPIO_PIN_12
 #define DI_GPIO_Port GPIOB
 #define DO_Pin GPIO_PIN_13
