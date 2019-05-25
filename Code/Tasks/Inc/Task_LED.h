@@ -11,7 +11,7 @@
 
 void Task_LED(void const * argument);
 void InitLED(void);
-void delay_us(uint16_t us);
+uint8_t humanDetect(void);
 
 #endif /*__ TASK_LED_H */
 
