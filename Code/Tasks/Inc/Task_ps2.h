@@ -48,6 +48,7 @@ void PS2_ReadData(void);
 uint8_t PS2_DataKey(void);
 uint8_t PS2_AnologData(uint8_t button);
 void PS2_ClearData(void);
+void delay_us(uint16_t us);
 
 //void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
 

@@ -16,10 +16,13 @@ float gyroXAngle,gyroYAngle,gyroZAngle;
 float gyroXspeed,gyroYspeed,gyroZspeed;
 float gyroXacceleration,gyroYacceleration,gyroZacceleration;
 float temperature;
+
+uint8_t debug_flag=0;
 void Task_GRYO(void const * argument)
 {
   while(1)
   {
+		debug_flag = humanDetect();
     if(gyroIsReady && !sumCheck())
 		{
 //			printf("Processing gyro.");      //开苃后dubug有问题，未解决

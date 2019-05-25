@@ -1,3 +1,14 @@
+/**
+  ******************************************************************************
+  * File Name          : Task_ps2.c
+  * Description        : 读取ps2数据，将其转化为真实数据（最高优先级）
+	* PS2数据读取需要用到us级别定时。其具体帧内容参见ps解码通讯手册。
+	* DI  -> PB12
+	* DO  -> PB13
+	* CS  -> PB14
+ 	* CLK -> PB15
+  ******************************************************************************
+*/
 #include "includes.h"
 
 #define DI() 	HAL_GPIO_ReadPin(DI_GPIO_Port,DI_Pin)
@@ -35,9 +46,22 @@ void Task_ps2(void const * argument)
   /* USER CODE END Task_ps2 */
 }
 
-//
+//us级别延迟函数，通过配置TIM14实现
+void delay_us(uint16_t us)
+{
+    uint16_t differ=0xffff-us-5;
 
-/****************************/
+    HAL_TIM_Base_Start(&htim14);
+
+    __HAL_TIM_SetCounter(&htim14,differ);
+
+    while(differ<0xffff-5)
+    {
+        differ=__HAL_TIM_GetCounter(&htim14);
+    }
+
+    HAL_TIM_Base_Stop(&htim14);
+}
 
 //static uint8_t  fac_us=0;//us延时倍乘数
 //static uint16_t fac_ms=0;//ms延时倍乘数
