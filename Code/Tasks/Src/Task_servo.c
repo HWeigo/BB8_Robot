@@ -38,7 +38,19 @@ extern uint8_t key;
 extern int16_t servoSwerve;
 void Task_Servo(void const * argument)
 {
-
+	/**************************************************************************/
+	/*
+	*车轮PWM驱动控制，暂时放在servo.c
+	*利用TIM4参数PWM，驱动频率为10kHz（推荐），采用预分频48-1，自动重载周期100-1。
+	*控制范围0-100。
+	* TIM4_CH1 -> PD12
+	* TIM4_CH2 -> PD13
+	*/
+	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 50);
+	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, 80);
+	
+	/**************************************************************************/
+	
 	setServoSpeed(0);
   while(1)
   {
