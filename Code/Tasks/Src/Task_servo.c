@@ -65,17 +65,29 @@ void setMotor1Speed(int16_t speed_f)
 	}
 }
 
-
-#define setMotor2Speed(x) \
-if(x<=0)\
-{\
-	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, -x/128*100);\
-	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_4, 0);\
-}\
-else\
-{\
-	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, 0);\
-	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_4, x/128*100);\
+//#define setMotor2Speed(x) \
+//if(x<=0)\
+//{\
+//	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, -x/128*100);\
+//	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_4, 0);\
+//}\
+//else\
+//{\
+//	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, 0);\
+//	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_4, x/128*100);\
+//}
+void setMotor2Speed(int16_t speed_f)
+{
+	if(speed_f >= 0)
+	{
+	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, 100*speed_f/128);
+	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_4, 0);
+	}
+	else
+	{	
+	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, 0);
+	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_4, -100*speed_f/128);
+	}
 }
 	/**************************************************************************/
 
@@ -89,23 +101,30 @@ void Task_Servo(void const * argument)
 	*¿ØÖÆ·¶Î§0-100¡£
 	* TIM4_CH1 -> PD12
 	* TIM4_CH2 -> PD13
+	* TIM4_CH3 -> PD14
+	* TIM4_CH4 -> PD15
 	*/
-	//__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 50);
-	//__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, 80);
-
+	
+	setMotor1Speed(0);
+	setMotor2Speed(0);
 	
 	/**************************************************************************/
 	
 	setServoSpeed(0);
+
   while(1)
   {
+		
+	/**************************************************************************/
 		if(PS2_RedLight())
 		{
 			setMotor1Speed(speed);
-			//setMotor2Speed(speed);
+			setMotor2Speed(speed);
+	//		setMotor2Speed(50);
 	//		__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 100);
 	//		__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, 0);
 		}
+	/**************************************************************************/		
 		
 		if(key == 0 && servoSwerve == 0)
 		{
