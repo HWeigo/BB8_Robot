@@ -35,7 +35,63 @@ uint16_t DutyCycle_STOP = 150; //零点标定似乎与电池电量（电压）有关
 uint16_t rotateSpeed = 0; //范围+-100
 ServoCmd_e ServoCmd = Mode_1;
 extern uint8_t key;
+
+	/**************************************************************************/
 extern int16_t servoSwerve;
+extern int16_t speed;
+
+//#define setMotor1Speed(x) \
+//if(x>=0)\
+//{\
+//	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 100*x/128);\
+//	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, 0);\
+//}\
+//else\
+//{\
+//	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 0);\
+//	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, -100*x/128);\
+//}
+void setMotor1Speed(int16_t speed_f)
+{
+	if(speed_f >= 0)
+	{
+	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 100*speed_f/128);
+	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, 0);
+	}
+	else
+	{	
+	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 0);
+	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, -100*speed_f/128);
+	}
+}
+
+//#define setMotor2Speed(x) \
+//if(x<=0)\
+//{\
+//	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, -x/128*100);\
+//	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_4, 0);\
+//}\
+//else\
+//{\
+//	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, 0);\
+//	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_4, x/128*100);\
+//}
+void setMotor2Speed(int16_t speed_f)
+{
+	if(speed_f >= 0)
+	{
+	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, 100*speed_f/128);
+	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_4, 0);
+	}
+	else
+	{	
+	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, 0);
+	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_4, -100*speed_f/128);
+	}
+}
+	/**************************************************************************/
+
+
 void Task_Servo(void const * argument)
 {
 	/**************************************************************************/
@@ -45,15 +101,31 @@ void Task_Servo(void const * argument)
 	*控制范围0-100。
 	* TIM4_CH1 -> PD12
 	* TIM4_CH2 -> PD13
+	* TIM4_CH3 -> PD14
+	* TIM4_CH4 -> PD15
 	*/
-	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 50);
-	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, 80);
+	
+	setMotor1Speed(0);
+	setMotor2Speed(0);
 	
 	/**************************************************************************/
 	
 	setServoSpeed(0);
+
   while(1)
   {
+		
+	/**************************************************************************/
+		if(PS2_RedLight())
+		{
+			setMotor1Speed(speed);
+			setMotor2Speed(speed);
+	//		setMotor2Speed(50);
+	//		__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 100);
+	//		__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, 0);
+		}
+	/**************************************************************************/		
+		
 		if(key == 0 && servoSwerve == 0)
 		{
 			setServoSpeed(0);

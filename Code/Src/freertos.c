@@ -125,6 +125,53 @@ void MX_FREERTOS_Init(void) {
 }
 
 /* Task_LED function */
+//void Task_LED(void const * argument)
+//{
+
+//  /* USER CODE BEGIN Task_LED */
+//  /* Infinite loop */
+//  for(;;)
+//  {
+//    osDelay(1);
+//  }
+//  /* USER CODE END Task_LED */
+//}
+
+///* Task_GRYO function */
+//void Task_GRYO(void const * argument)
+//{
+//  /* USER CODE BEGIN Task_GRYO */
+//  /* Infinite loop */
+//  for(;;)
+//  {
+//    osDelay(1);
+//  }
+//  /* USER CODE END Task_GRYO */
+//}
+
+///* Task_Servo function */
+//void Task_Servo(void const * argument)
+//{
+//  /* USER CODE BEGIN Task_Servo */
+//  /* Infinite loop */
+//  for(;;)
+//  {
+//    osDelay(1);
+//  }
+//  /* USER CODE END Task_Servo */
+//}
+
+///* Task_ps2 function */
+//void Task_ps2(void const * argument)
+//{
+//  /* USER CODE BEGIN Task_ps2 */
+//  /* Infinite loop */
+//  for(;;)
+//  {
+//    osDelay(1);
+//  }
+//  /* USER CODE END Task_ps2 */
+//}
 
 /* USER CODE BEGIN Application */
      
