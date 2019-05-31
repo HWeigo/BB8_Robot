@@ -7,7 +7,7 @@
 	* 20ms的脉冲信号，采用预分频480-1，自动重载周期2000-1。
 	* PWM频率 = 48 * 10^6 / 480 / 2000 = 50HZ。
 	* 注意，舵机工作电压为4.8V-6V。
-	* 信号线 -> PA0
+	* 信号线 -> PA2
   ******************************************************************************
 */
 
@@ -29,14 +29,14 @@ uint16_t DutyCycle_STOP = 150; //零点标定似乎与电池电量（电压）有关
 #endif 
 
 //360度模拟舵机速度控制 x>0：顺时针 x<0：逆时针
-#define setServoSpeed(x) __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, DutyCycle_STOP - x)
-#define setServoStop() __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, DutyCycle_STOP)
+#define setServoSpeed(x) __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, DutyCycle_STOP - x)
+#define setServoStop() __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, DutyCycle_STOP)
 
 uint16_t rotateSpeed = 0; //范围+-100
 ServoCmd_e ServoCmd = Mode_1;
 extern uint8_t key;
 
-	/**************************************************************************/
+/**************************************************************************/
 extern int16_t servoSwerve;
 extern int16_t speed;
 
