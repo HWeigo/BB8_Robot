@@ -41,7 +41,7 @@ void Task_ps2(void const * argument)
 		servoSwerve = (PS2_AnologData(PSS_RX)-127)-1;
 		
 		  HAL_NVIC_EnableIRQ(DMA2_Stream2_IRQn); //重启使能中断
-    osDelay(10);
+    osDelay(30);
   }
   /* USER CODE END Task_ps2 */
 }

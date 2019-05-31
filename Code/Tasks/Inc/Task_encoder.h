@@ -1,17 +1,16 @@
 /**
   ******************************************************************************
-  * File Name          : Task_LED.h
+  * File Name          : Task_encoder.h
   * Description        : 
   ******************************************************************************
   */
-#ifndef __TASK_LED_H
-#define __TASK_LED_H
+#ifndef __TASK_ENCODER_H
+#define __TASK_ENCODER_H
 
 #include "includes.h"
 
-//void Task_LED(void const * argument);
-//void InitLED(void);
-//uint8_t humanDetect(void);
+void Task_encoder(void const * argument);
+
 
 #endif /*__ TASK_LED_H */
 

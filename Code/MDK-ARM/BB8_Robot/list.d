@@ -1,8 +1,8 @@
 bb8_robot\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/list.c
-bb8_robot\list.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+bb8_robot\list.o: D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\Bin\..\include\stdlib.h
 bb8_robot\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-bb8_robot\list.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-bb8_robot\list.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+bb8_robot\list.o: D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\Bin\..\include\stddef.h
+bb8_robot\list.o: D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\Bin\..\include\stdint.h
 bb8_robot\list.o: ../Inc/FreeRTOSConfig.h
 bb8_robot\list.o: ../Inc/main.h
 bb8_robot\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
