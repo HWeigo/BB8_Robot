@@ -32,6 +32,7 @@
 #include "Task_servo.h"
 #include "Task_gyro.h"
 #include "Task_ps2.h"
+#include "Task_encoder.h"
 
 #include "Drivers_uartgyro.h"
 
