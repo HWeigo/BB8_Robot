@@ -49,7 +49,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "includes.h"
 
-
 /* USER CODE BEGIN Includes */     
 
 /* USER CODE END Includes */
@@ -129,11 +128,11 @@ void MX_FREERTOS_Init(void) {
 //{
 
 //  /* USER CODE BEGIN Task_LED */
-////  /* Infinite loop */
-////  for(;;)
-////  {
-////    osDelay(1);
-////  }
+//////  /* Infinite loop */
+//////  for(;;)
+//////  {
+//////    osDelay(1);
+//////  }
 //  /* USER CODE END Task_LED */
 //}
 
@@ -141,11 +140,11 @@ void MX_FREERTOS_Init(void) {
 //void Task_GRYO(void const * argument)
 //{
 //  /* USER CODE BEGIN Task_GRYO */
-////  /* Infinite loop */
-////  for(;;)
-////  {
-////    osDelay(1);
-////  }
+//////  /* Infinite loop */
+//////  for(;;)
+//////  {
+//////    osDelay(1);
+//////  }
 //  /* USER CODE END Task_GRYO */
 //}
 
@@ -153,11 +152,11 @@ void MX_FREERTOS_Init(void) {
 //void Task_Servo(void const * argument)
 //{
 //  /* USER CODE BEGIN Task_Servo */
-////  /* Infinite loop */
-////  for(;;)
-////  {
-////    osDelay(1);
-////  }
+//////  /* Infinite loop */
+//////  for(;;)
+//////  {
+//////    osDelay(1);
+//////  }
 //  /* USER CODE END Task_Servo */
 //}
 
@@ -165,11 +164,11 @@ void MX_FREERTOS_Init(void) {
 //void Task_ps2(void const * argument)
 //{
 //  /* USER CODE BEGIN Task_ps2 */
-////  /* Infinite loop */
-////  for(;;)
-////  {
-////    osDelay(1);
-////  }
+//////  /* Infinite loop */
+//////  for(;;)
+//////  {
+//////    osDelay(1);
+//////  }
 //  /* USER CODE END Task_ps2 */
 //}
 
