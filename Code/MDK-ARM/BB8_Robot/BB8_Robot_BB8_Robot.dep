@@ -1,7 +1,7 @@
 Dependencies for Project 'BB8_Robot', Target 'BB8_Robot': (DO NOT MODIFY !)
 F (startup_stm32f407xx.s)(0x5CF113B2)(--cpu Cortex-M4.fp -g --apcs=interwork --pd "__MICROLIB SETA 1" -I ..\\Inc-I.\RTE\_BB8_Robot-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include"-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"--pd "__UVISION_VERSION SETA 524" --pd "_RTE_ SETA 1" --pd "STM32F407xx SETA 1"--list startup_stm32f407xx.lst --xref -o bb8_robot\startup_stm32f407xx.o --depend bb8_robot\startup_stm32f407xx.d)
-F (../Src/main.c)(0x5CF128E9)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ..\Tasks\Inc -I ..\Tasks\Src-I.\RTE\_BB8_Robot-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include"-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o bb8_robot\main.o --omf_browse bb8_robot\main.crf --depend bb8_robot\main.d)
-I (../Inc/includes.h)(0x5CF11331)
+F (../Src/main.c)(0x5CF7BD49)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ..\Tasks\Inc -I ..\Tasks\Src-I.\RTE\_BB8_Robot-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include"-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o bb8_robot\main.o --omf_browse bb8_robot\main.crf --depend bb8_robot\main.d)
+I (../Inc/includes.h)(0x5CF3BB4D)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\math.h)(0x5475F2FE)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stdint.h)(0x5475F300)
@@ -39,7 +39,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x5B3C6CA7)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x5B3C6CA7)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B3C6CAB)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stddef.h)(0x5475F300)
-I (../Inc/FreeRTOSConfig.h)(0x5CF1162E)
+I (../Inc/FreeRTOSConfig.h)(0x5CF3BB4D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5B3C6CAB)
@@ -60,7 +60,7 @@ I (..\Tasks\Inc\Task_LED.h)(0x5CE89860)
 I (..\Tasks\Inc\Task_servo.h)(0x5CD3F553)
 I (..\Tasks\Inc\Task_gyro.h)(0x5CCA6D69)
 I (..\Tasks\Inc\Task_ps2.h)(0x5CEF7CC2)
-I (..\Tasks\Inc\Task_encoder.h)(0x5CF1144F)
+I (..\Tasks\Inc\Task_encoder.h)(0x5CF3BB52)
 I (..\Tasks\Inc\Drivers_uartgyro.h)(0x5CCA6D69)
 F (../Src/gpio.c)(0x5CF113AD)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ..\Tasks\Inc -I ..\Tasks\Src-I.\RTE\_BB8_Robot-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include"-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o bb8_robot\gpio.o --omf_browse bb8_robot\gpio.crf --depend bb8_robot\gpio.d)
 I (../Inc/gpio.h)(0x5CF113AD)
@@ -128,8 +128,8 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x5B3C6CA7)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x5B3C6CA7)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x5B3C6CA7)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x5B3C6CA7)
-F (../Src/freertos.c)(0x5CF118B7)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ..\Tasks\Inc -I ..\Tasks\Src-I.\RTE\_BB8_Robot-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include"-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o bb8_robot\freertos.o --omf_browse bb8_robot\freertos.crf --depend bb8_robot\freertos.d)
-I (../Inc/includes.h)(0x5CF11331)
+F (../Src/freertos.c)(0x5CF3BB52)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ..\Tasks\Inc -I ..\Tasks\Src-I.\RTE\_BB8_Robot-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include"-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o bb8_robot\freertos.o --omf_browse bb8_robot\freertos.crf --depend bb8_robot\freertos.d)
+I (../Inc/includes.h)(0x5CF3BB4D)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\math.h)(0x5475F2FE)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stdint.h)(0x5475F300)
@@ -167,7 +167,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x5B3C6CA7)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x5B3C6CA7)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B3C6CAB)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stddef.h)(0x5475F300)
-I (../Inc/FreeRTOSConfig.h)(0x5CF1162E)
+I (../Inc/FreeRTOSConfig.h)(0x5CF3BB4D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5B3C6CAB)
@@ -188,7 +188,7 @@ I (..\Tasks\Inc\Task_LED.h)(0x5CE89860)
 I (..\Tasks\Inc\Task_servo.h)(0x5CD3F553)
 I (..\Tasks\Inc\Task_gyro.h)(0x5CCA6D69)
 I (..\Tasks\Inc\Task_ps2.h)(0x5CEF7CC2)
-I (..\Tasks\Inc\Task_encoder.h)(0x5CF1144F)
+I (..\Tasks\Inc\Task_encoder.h)(0x5CF3BB52)
 I (..\Tasks\Inc\Drivers_uartgyro.h)(0x5CCA6D69)
 F (../Src/iwdg.c)(0x5CF113AF)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ..\Tasks\Inc -I ..\Tasks\Src-I.\RTE\_BB8_Robot-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include"-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o bb8_robot\iwdg.o --omf_browse bb8_robot\iwdg.crf --depend bb8_robot\iwdg.d)
 I (../Inc/iwdg.h)(0x5CF113AF)
@@ -328,7 +328,7 @@ I (../Inc/stm32f4xx_it.h)(0x5CF113B0)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B3C6CAB)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stddef.h)(0x5475F300)
-I (../Inc/FreeRTOSConfig.h)(0x5CF1162E)
+I (../Inc/FreeRTOSConfig.h)(0x5CF3BB4D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5B3C6CAB)
@@ -953,7 +953,7 @@ I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B3C6CAB)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stddef.h)(0x5475F300)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (../Inc/FreeRTOSConfig.h)(0x5CF1162E)
+I (../Inc/FreeRTOSConfig.h)(0x5CF3BB4D)
 I (../Inc/main.h)(0x5CF113B0)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B3C6CAB)
@@ -966,7 +966,7 @@ F (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/port.c)(0x5
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B3C6CAB)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stddef.h)(0x5475F300)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (../Inc/FreeRTOSConfig.h)(0x5CF1162E)
+I (../Inc/FreeRTOSConfig.h)(0x5CF3BB4D)
 I (../Inc/main.h)(0x5CF113B0)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B3C6CAB)
@@ -979,7 +979,7 @@ F (../Middlewares/Third_Party/FreeRTOS/Source/croutine.c)(0x5B3C6CAB)(--c99 -c -
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B3C6CAB)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stddef.h)(0x5475F300)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (../Inc/FreeRTOSConfig.h)(0x5CF1162E)
+I (../Inc/FreeRTOSConfig.h)(0x5CF3BB4D)
 I (../Inc/main.h)(0x5CF113B0)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B3C6CAB)
@@ -994,7 +994,7 @@ I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B3C6CAB)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stddef.h)(0x5475F300)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (../Inc/FreeRTOSConfig.h)(0x5CF1162E)
+I (../Inc/FreeRTOSConfig.h)(0x5CF3BB4D)
 I (../Inc/main.h)(0x5CF113B0)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B3C6CAB)
@@ -1010,7 +1010,7 @@ I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B3C6CAB)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stddef.h)(0x5475F300)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (../Inc/FreeRTOSConfig.h)(0x5CF1162E)
+I (../Inc/FreeRTOSConfig.h)(0x5CF3BB4D)
 I (../Inc/main.h)(0x5CF113B0)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B3C6CAB)
@@ -1024,7 +1024,7 @@ I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\string.h)(0x5475F300)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B3C6CAB)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stddef.h)(0x5475F300)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (../Inc/FreeRTOSConfig.h)(0x5CF1162E)
+I (../Inc/FreeRTOSConfig.h)(0x5CF3BB4D)
 I (../Inc/main.h)(0x5CF113B0)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B3C6CAB)
@@ -1040,7 +1040,7 @@ I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\string.h)(0x5475F300)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B3C6CAB)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stddef.h)(0x5475F300)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (../Inc/FreeRTOSConfig.h)(0x5CF1162E)
+I (../Inc/FreeRTOSConfig.h)(0x5CF3BB4D)
 I (../Inc/main.h)(0x5CF113B0)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B3C6CAB)
@@ -1056,7 +1056,7 @@ I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B3C6CAB)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stddef.h)(0x5475F300)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (../Inc/FreeRTOSConfig.h)(0x5CF1162E)
+I (../Inc/FreeRTOSConfig.h)(0x5CF3BB4D)
 I (../Inc/main.h)(0x5CF113B0)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B3C6CAB)
@@ -1073,7 +1073,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B3C6CAB)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stddef.h)(0x5475F300)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (../Inc/FreeRTOSConfig.h)(0x5CF1162E)
+I (../Inc/FreeRTOSConfig.h)(0x5CF3BB4D)
 I (../Inc/main.h)(0x5CF113B0)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B3C6CAB)
@@ -1088,7 +1088,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x5B3C6CAB)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5B3C6CA6)
 F (..\Tasks\Src\Task_LED.c)(0x5CE8A7C4)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ..\Tasks\Inc -I ..\Tasks\Src-I.\RTE\_BB8_Robot-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include"-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o bb8_robot\task_led.o --omf_browse bb8_robot\task_led.crf --depend bb8_robot\task_led.d)
-I (../Inc/includes.h)(0x5CF11331)
+I (../Inc/includes.h)(0x5CF3BB4D)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\math.h)(0x5475F2FE)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stdint.h)(0x5475F300)
@@ -1126,7 +1126,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x5B3C6CA7)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x5B3C6CA7)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B3C6CAB)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stddef.h)(0x5475F300)
-I (../Inc/FreeRTOSConfig.h)(0x5CF1162E)
+I (../Inc/FreeRTOSConfig.h)(0x5CF3BB4D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5B3C6CAB)
@@ -1147,10 +1147,10 @@ I (..\Tasks\Inc\Task_LED.h)(0x5CE89860)
 I (..\Tasks\Inc\Task_servo.h)(0x5CD3F553)
 I (..\Tasks\Inc\Task_gyro.h)(0x5CCA6D69)
 I (..\Tasks\Inc\Task_ps2.h)(0x5CEF7CC2)
-I (..\Tasks\Inc\Task_encoder.h)(0x5CF1144F)
+I (..\Tasks\Inc\Task_encoder.h)(0x5CF3BB52)
 I (..\Tasks\Inc\Drivers_uartgyro.h)(0x5CCA6D69)
-F (..\Tasks\Src\Task_gyro.c)(0x5CF13209)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ..\Tasks\Inc -I ..\Tasks\Src-I.\RTE\_BB8_Robot-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include"-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o bb8_robot\task_gyro.o --omf_browse bb8_robot\task_gyro.crf --depend bb8_robot\task_gyro.d)
-I (../Inc/includes.h)(0x5CF11331)
+F (..\Tasks\Src\Task_gyro.c)(0x5CF7A357)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ..\Tasks\Inc -I ..\Tasks\Src-I.\RTE\_BB8_Robot-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include"-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o bb8_robot\task_gyro.o --omf_browse bb8_robot\task_gyro.crf --depend bb8_robot\task_gyro.d)
+I (../Inc/includes.h)(0x5CF3BB4D)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\math.h)(0x5475F2FE)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stdint.h)(0x5475F300)
@@ -1188,7 +1188,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x5B3C6CA7)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x5B3C6CA7)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B3C6CAB)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stddef.h)(0x5475F300)
-I (../Inc/FreeRTOSConfig.h)(0x5CF1162E)
+I (../Inc/FreeRTOSConfig.h)(0x5CF3BB4D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5B3C6CAB)
@@ -1209,10 +1209,10 @@ I (..\Tasks\Inc\Task_LED.h)(0x5CE89860)
 I (..\Tasks\Inc\Task_servo.h)(0x5CD3F553)
 I (..\Tasks\Inc\Task_gyro.h)(0x5CCA6D69)
 I (..\Tasks\Inc\Task_ps2.h)(0x5CEF7CC2)
-I (..\Tasks\Inc\Task_encoder.h)(0x5CF1144F)
+I (..\Tasks\Inc\Task_encoder.h)(0x5CF3BB52)
 I (..\Tasks\Inc\Drivers_uartgyro.h)(0x5CCA6D69)
 F (..\Tasks\Src\Task_servo.c)(0x5CEFE703)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ..\Tasks\Inc -I ..\Tasks\Src-I.\RTE\_BB8_Robot-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include"-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o bb8_robot\task_servo.o --omf_browse bb8_robot\task_servo.crf --depend bb8_robot\task_servo.d)
-I (../Inc/includes.h)(0x5CF11331)
+I (../Inc/includes.h)(0x5CF3BB4D)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\math.h)(0x5475F2FE)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stdint.h)(0x5475F300)
@@ -1250,7 +1250,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x5B3C6CA7)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x5B3C6CA7)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B3C6CAB)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stddef.h)(0x5475F300)
-I (../Inc/FreeRTOSConfig.h)(0x5CF1162E)
+I (../Inc/FreeRTOSConfig.h)(0x5CF3BB4D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5B3C6CAB)
@@ -1271,10 +1271,10 @@ I (..\Tasks\Inc\Task_LED.h)(0x5CE89860)
 I (..\Tasks\Inc\Task_servo.h)(0x5CD3F553)
 I (..\Tasks\Inc\Task_gyro.h)(0x5CCA6D69)
 I (..\Tasks\Inc\Task_ps2.h)(0x5CEF7CC2)
-I (..\Tasks\Inc\Task_encoder.h)(0x5CF1144F)
+I (..\Tasks\Inc\Task_encoder.h)(0x5CF3BB52)
 I (..\Tasks\Inc\Drivers_uartgyro.h)(0x5CCA6D69)
-F (..\Tasks\Src\Task_ps2.c)(0x5CF119AA)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ..\Tasks\Inc -I ..\Tasks\Src-I.\RTE\_BB8_Robot-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include"-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o bb8_robot\task_ps2.o --omf_browse bb8_robot\task_ps2.crf --depend bb8_robot\task_ps2.d)
-I (../Inc/includes.h)(0x5CF11331)
+F (..\Tasks\Src\Task_ps2.c)(0x5CF3BB52)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ..\Tasks\Inc -I ..\Tasks\Src-I.\RTE\_BB8_Robot-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include"-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o bb8_robot\task_ps2.o --omf_browse bb8_robot\task_ps2.crf --depend bb8_robot\task_ps2.d)
+I (../Inc/includes.h)(0x5CF3BB4D)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\math.h)(0x5475F2FE)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stdint.h)(0x5475F300)
@@ -1312,7 +1312,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x5B3C6CA7)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x5B3C6CA7)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B3C6CAB)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stddef.h)(0x5475F300)
-I (../Inc/FreeRTOSConfig.h)(0x5CF1162E)
+I (../Inc/FreeRTOSConfig.h)(0x5CF3BB4D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5B3C6CAB)
@@ -1333,10 +1333,10 @@ I (..\Tasks\Inc\Task_LED.h)(0x5CE89860)
 I (..\Tasks\Inc\Task_servo.h)(0x5CD3F553)
 I (..\Tasks\Inc\Task_gyro.h)(0x5CCA6D69)
 I (..\Tasks\Inc\Task_ps2.h)(0x5CEF7CC2)
-I (..\Tasks\Inc\Task_encoder.h)(0x5CF1144F)
+I (..\Tasks\Inc\Task_encoder.h)(0x5CF3BB52)
 I (..\Tasks\Inc\Drivers_uartgyro.h)(0x5CCA6D69)
-F (..\Tasks\Src\Task_encoder.c)(0x5CF13178)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ..\Tasks\Inc -I ..\Tasks\Src-I.\RTE\_BB8_Robot-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include"-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o bb8_robot\task_encoder.o --omf_browse bb8_robot\task_encoder.crf --depend bb8_robot\task_encoder.d)
-I (../Inc/includes.h)(0x5CF11331)
+F (..\Tasks\Src\Task_encoder.c)(0x5CF7BD49)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ..\Tasks\Inc -I ..\Tasks\Src-I.\RTE\_BB8_Robot-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include"-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o bb8_robot\task_encoder.o --omf_browse bb8_robot\task_encoder.crf --depend bb8_robot\task_encoder.d)
+I (../Inc/includes.h)(0x5CF3BB4D)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\math.h)(0x5475F2FE)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stdint.h)(0x5475F300)
@@ -1374,7 +1374,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x5B3C6CA7)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x5B3C6CA7)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B3C6CAB)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stddef.h)(0x5475F300)
-I (../Inc/FreeRTOSConfig.h)(0x5CF1162E)
+I (../Inc/FreeRTOSConfig.h)(0x5CF3BB4D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5B3C6CAB)
@@ -1395,10 +1395,10 @@ I (..\Tasks\Inc\Task_LED.h)(0x5CE89860)
 I (..\Tasks\Inc\Task_servo.h)(0x5CD3F553)
 I (..\Tasks\Inc\Task_gyro.h)(0x5CCA6D69)
 I (..\Tasks\Inc\Task_ps2.h)(0x5CEF7CC2)
-I (..\Tasks\Inc\Task_encoder.h)(0x5CF1144F)
+I (..\Tasks\Inc\Task_encoder.h)(0x5CF3BB52)
 I (..\Tasks\Inc\Drivers_uartgyro.h)(0x5CCA6D69)
 F (..\Tasks\Src\Drivers_uartgyro.c)(0x5CCA6D69)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ..\Tasks\Inc -I ..\Tasks\Src-I.\RTE\_BB8_Robot-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include"-I"D:\Robotmasters\Keil ARM SETUP\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o bb8_robot\drivers_uartgyro.o --omf_browse bb8_robot\drivers_uartgyro.crf --depend bb8_robot\drivers_uartgyro.d)
-I (../Inc/includes.h)(0x5CF11331)
+I (../Inc/includes.h)(0x5CF3BB4D)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\math.h)(0x5475F2FE)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stdint.h)(0x5475F300)
@@ -1436,7 +1436,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x5B3C6CA7)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x5B3C6CA7)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B3C6CAB)
 I (D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\include\stddef.h)(0x5475F300)
-I (../Inc/FreeRTOSConfig.h)(0x5CF1162E)
+I (../Inc/FreeRTOSConfig.h)(0x5CF3BB4D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B3C6CAB)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5B3C6CAB)
@@ -1457,5 +1457,5 @@ I (..\Tasks\Inc\Task_LED.h)(0x5CE89860)
 I (..\Tasks\Inc\Task_servo.h)(0x5CD3F553)
 I (..\Tasks\Inc\Task_gyro.h)(0x5CCA6D69)
 I (..\Tasks\Inc\Task_ps2.h)(0x5CEF7CC2)
-I (..\Tasks\Inc\Task_encoder.h)(0x5CF1144F)
+I (..\Tasks\Inc\Task_encoder.h)(0x5CF3BB52)
 I (..\Tasks\Inc\Drivers_uartgyro.h)(0x5CCA6D69)
