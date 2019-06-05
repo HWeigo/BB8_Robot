@@ -4,3 +4,5 @@
   2,将/Application/User/freertos.c中任务句柄删去（已转移到/Tasks下的任务当中）;
   3,检查是否有新引用内容，若有，添加到includes.h当中。
   ```
+
+STM32CubeMX当中任务优先级尚未更新
