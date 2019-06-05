@@ -30,10 +30,10 @@ void Task_encoder(void const * argument)
 		}
 		//tmpEncoderL = __HAL_TIM_GetCounter(&htim5);
 		
-		if(__HAL_TIM_DIRECTION_STATUS(&htim5)==0)	encoderL=encoderL+__HAL_TIM_GetCounter(&htim5);
-		else if(__HAL_TIM_GetCounter(&htim5)!=0)	encoderL=encoderL-(0xFFFF-__HAL_TIM_GetCounter(&htim5)+1);
-		if(__HAL_TIM_DIRECTION_STATUS(&htim3)==0)	encoderR=encoderR+__HAL_TIM_GetCounter(&htim3);
-		else if(__HAL_TIM_GetCounter(&htim3)!=0)	encoderR=encoderR-(0xFFFF-__HAL_TIM_GetCounter(&htim3)+1);		
+		if(__HAL_TIM_DIRECTION_STATUS(&htim5)==0)	encoderL=__HAL_TIM_GetCounter(&htim5);
+		else if(__HAL_TIM_GetCounter(&htim5)!=0)	encoderL=-(0xFFFF-__HAL_TIM_GetCounter(&htim5)+1);
+		if(__HAL_TIM_DIRECTION_STATUS(&htim3)==0)	encoderR=__HAL_TIM_GetCounter(&htim3);
+		else if(__HAL_TIM_GetCounter(&htim3)!=0)	encoderR=-(0xFFFF-__HAL_TIM_GetCounter(&htim3)+1);		
 		
 		
 		__HAL_TIM_SetCounter(&htim5,0);
