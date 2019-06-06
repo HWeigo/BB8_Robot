@@ -61,7 +61,7 @@ float Balance_Pwm=0,Velocity_Pwm,Turn_Pwm;
 //	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 0);\
 //	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, -100*x/128);\
 //}
-void setMotor1Speed(int16_t speed_f)
+void setMotor1Speed(float speed_f)
 {
 	if(speed_f >= 0)
 	{
@@ -71,7 +71,7 @@ void setMotor1Speed(int16_t speed_f)
 	else
 	{	
 	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 0);
-	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, speed_f);
+	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, -speed_f);
 	}
 }
 
@@ -86,7 +86,7 @@ void setMotor1Speed(int16_t speed_f)
 //	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, 0);\
 //	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_4, x/128*100);\
 //}
-void setMotor2Speed(int16_t speed_f)
+void setMotor2Speed(float speed_f)
 {
 	if(speed_f >= 0)
 	{
@@ -96,7 +96,7 @@ void setMotor2Speed(int16_t speed_f)
 	else
 	{	
 	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, 0);
-	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_4, speed_f);
+	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_4, -speed_f);
 	}
 }
 	/**************************************************************************/
@@ -140,8 +140,10 @@ void Task_Servo(void const * argument)
 		if(!PS2_RedLight())
 		{
 			Balance_Pwm = - MAX(MIN(balance(gyroYAngle,gyroYspeed),100),-100); 
-			setMotor1Speed(Balance_Pwm);
+			
+			setMotor1Speed(Balance_Pwm); //负值有问题
 			setMotor2Speed(Balance_Pwm);
+
 		}
 		
 		
@@ -197,10 +199,10 @@ void Task_Servo(void const * argument)
 /***********PD直立环*************/
 float balance(float Angle,float Gyro)
 {  
-   float Bias;
+   float Gap;
 	 int balance;
-	 Bias=Angle-Zero_point;       //===求出平衡的角度中值 和机械相关
-	 balance=Balance_Kp*Bias+Gyro*Balance_Kd;   //===计算平衡控制的电机PWM  PD控制   kp是P系数 kd是D系数 
+	 Gap=Angle-Zero_point;                     //===求出平衡的角度中值 和机械相关
+	 balance=Balance_Kp*Gap+Gyro*Balance_Kd;   //===计算平衡控制的电机PWM  PD控制   kp是P系数 kd是D系数 
 	 return balance;
 }
 /***********************************/
