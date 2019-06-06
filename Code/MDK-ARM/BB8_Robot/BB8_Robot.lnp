@@ -1,4 +1,4 @@
---cpu=Cortex-M4.fp
+--cpu Cortex-M4.fp
 "bb8_robot\startup_stm32f407xx.o"
 "bb8_robot\main.o"
 "bb8_robot\gpio.o"
@@ -43,6 +43,6 @@
 "bb8_robot\task_encoder.o"
 "bb8_robot\drivers_uartgyro.o"
 --library_type=microlib --strict --scatter "BB8_Robot\BB8_Robot.sct"
---summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list "BB8_Robot.map" -o BB8_Robot\BB8_Robot.axf

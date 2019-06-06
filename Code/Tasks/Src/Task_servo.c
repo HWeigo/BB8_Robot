@@ -40,6 +40,16 @@ extern uint8_t key;
 extern int16_t servoSwerve;
 extern int16_t speed;
 
+//PID控制参数
+#define Zero_point 0.5f
+#define Balance_Kp 10.0f
+#define Balance_Kd 0.0f
+#define MIN(A,B) ((A)<(B)?(A):(B))
+#define MAX(A,B) ((A)>(B)?(A):(B))
+
+extern float gyroYAngle,gyroYspeed;
+float Balance_Pwm=0,Velocity_Pwm,Turn_Pwm;
+
 //#define setMotor1Speed(x) \
 //if(x>=0)\
 //{\
@@ -55,13 +65,13 @@ void setMotor1Speed(int16_t speed_f)
 {
 	if(speed_f >= 0)
 	{
-	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 100*speed_f/128);
+	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, speed_f);
 	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, 0);
 	}
 	else
 	{	
 	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 0);
-	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, -100*speed_f/128);
+	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, speed_f);
 	}
 }
 
@@ -80,13 +90,13 @@ void setMotor2Speed(int16_t speed_f)
 {
 	if(speed_f >= 0)
 	{
-	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, 100*speed_f/128);
+	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, speed_f);
 	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_4, 0);
 	}
 	else
 	{	
 	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, 0);
-	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_4, -100*speed_f/128);
+	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_4, speed_f);
 	}
 }
 	/**************************************************************************/
@@ -118,13 +128,24 @@ void Task_Servo(void const * argument)
 	/**************************************************************************/
 		if(PS2_RedLight())
 		{
-			setMotor1Speed(speed);
-			setMotor2Speed(speed);
+			setMotor1Speed(100*speed/128);
+			setMotor2Speed(100*speed/128);
 	//		setMotor2Speed(50);
 	//		__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 100);
 	//		__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, 0);
 		}
-	/**************************************************************************/		
+	/**************************************************************************/
+
+/*************直立环控制**************/
+		if(!PS2_RedLight())
+		{
+			Balance_Pwm = - MAX(MIN(balance(gyroYAngle,gyroYspeed),100),-100); 
+			setMotor1Speed(Balance_Pwm);
+			setMotor2Speed(Balance_Pwm);
+		}
+		
+		
+		
 		
 		if(key == 0 && servoSwerve == 0)
 		{
@@ -171,3 +192,16 @@ void Task_Servo(void const * argument)
   }
   /* USER CODE END Task_Servo */
 }
+
+
+/***********PD直立环*************/
+float balance(float Angle,float Gyro)
+{  
+   float Bias;
+	 int balance;
+	 Bias=Angle-Zero_point;       //===求出平衡的角度中值 和机械相关
+	 balance=Balance_Kp*Bias+Gyro*Balance_Kd;   //===计算平衡控制的电机PWM  PD控制   kp是P系数 kd是D系数 
+	 return balance;
+}
+/***********************************/
+		

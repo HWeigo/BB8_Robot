@@ -10,6 +10,7 @@
 #include "includes.h"
 
 void Task_Servo(void const * argument);
+float balance(float Angle,float Gyro);
 
 typedef enum
 {
