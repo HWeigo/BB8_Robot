@@ -1,46 +1,66 @@
 /**
   ******************************************************************************
-  * File Name          : Task_encoder.c
-  * Description        : 
-	* 
+  * File Name          : Task_LED.c
+  * Description        : LED灯闪烁，对应板子上PF9,PF10
+	* 位于最低优先级＃用于监测系统时间调度情况以及是否宕机。
   ******************************************************************************
   */
 #include "includes.h"
 
+//LED1:PF9 LED2:PF10
+//低电平点亮
+//#define LED1ON() 		HAL_GPIO_WritePin(GPIOF,LED1_Pin,GPIO_PIN_RESET)
+//#define LED20ON() 		HAL_GPIO_WritePin(GPIOF,LED2_Pin,GPIO_PIN_RESET)
+//#define LED1OFF() 		HAL_GPIO_WritePin(GPIOF,LED1_Pin,GPIO_PIN_SET)
+//#define LED2OFF() 		HAL_GPIO_WritePin(GPIOF,LED2_Pin,GPIO_PIN_SET)
+//#define LED1TOGGLE() 		HAL_GPIO_TogglePin(LED1_GPIO_Port,LED1_Pin)
+//#define LED2TOGGLE() 		HAL_GPIO_TogglePin(LED2_GPIO_Port,LED2_Pin)
 
+//初始化闪灯
+//void InitLED(void)
+//{
+//	LED1OFF();
+//	LED20ON();
+//	
+//	const uint8_t initFlash = 5;          //初始化闪灯次数
+//	for(uint8_t i=0;i<initFlash;++i)
+//	{
+//		LED1TOGGLE();
+//		LED2TOGGLE();
+//		HAL_Delay(100);
+//	}
+//}
 
-/*************编码器计数*****/
-int32_t encoderL= 0, encoderR = 0;
+////LED任务运行在最低优先级
+///* Task_LED function */
 
-uint32_t encoderDebug = 0,encoderCnt = 0;
-uint32_t tmpEncoderL = 0;
-void Task_encoder(void const * argument)
-{
+//void Task_LED(void const * argument)
+//{
 
-	portTickType xLastWakeTime;
-	xLastWakeTime = xTaskGetTickCount();
-	
-  while(1)
-  {
-		++encoderCnt;
-		if(encoderCnt == 20) 
-		{
-			encoderCnt=0;
-			++encoderDebug;
-		}
-		//tmpEncoderL = __HAL_TIM_GetCounter(&htim5);
-		
-		if(__HAL_TIM_DIRECTION_STATUS(&htim5)==0)	encoderL=__HAL_TIM_GetCounter(&htim5);
-		else if(__HAL_TIM_GetCounter(&htim5)!=0)	encoderL=-(0xFFFF-__HAL_TIM_GetCounter(&htim5)+1);
-		if(__HAL_TIM_DIRECTION_STATUS(&htim3)==0)	encoderR=__HAL_TIM_GetCounter(&htim3);
-		else if(__HAL_TIM_GetCounter(&htim3)!=0)	encoderR=-(0xFFFF-__HAL_TIM_GetCounter(&htim3)+1);		
-		
-		
-		__HAL_TIM_SetCounter(&htim5,0);
-		__HAL_TIM_SetCounter(&htim3,0);
-		
-		vTaskDelayUntil( &xLastWakeTime, ( 10 / portTICK_RATE_MS ) ); //进入阻塞态50ms
-    //osDelay(1);
-  }
-  /* USER CODE END Task_encoder */
-}
+//  /* USER CODE BEGIN Task_LED */
+//  /* Infinite loop */
+//  while(1)
+//  {
+//		LED1ON();
+//		LED2TOGGLE();
+
+//		HAL_IWDG_Refresh(&hiwdg); //喂狗
+//		
+//		osDelay(300);		
+
+//  }
+//  /* USER CODE END Task_LED */
+//}
+
+//uint8_t humanDetect(void)
+//{
+//	//return HAL_GPIO_ReadPin(HCSensor_GPIO_Port,HCSensor_Pin) == GPIO_PIN_SET ? 1:0;
+//	if(HAL_GPIO_ReadPin(HCSensor_GPIO_Port,HCSensor_Pin) == GPIO_PIN_SET)
+//	{
+//		return 1;
+//	}
+//	else{
+//		return 0;
+//	}
+//}
+

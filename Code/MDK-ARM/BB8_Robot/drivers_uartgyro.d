@@ -60,4 +60,5 @@ bb8_robot\drivers_uartgyro.o: ../Inc/includes.h
 bb8_robot\drivers_uartgyro.o: ..\Tasks\Inc\Task_servo.h
 bb8_robot\drivers_uartgyro.o: ..\Tasks\Inc\Task_gyro.h
 bb8_robot\drivers_uartgyro.o: ..\Tasks\Inc\Task_ps2.h
+bb8_robot\drivers_uartgyro.o: ..\Tasks\Inc\Task_encoder.h
 bb8_robot\drivers_uartgyro.o: ..\Tasks\Inc\Drivers_uartgyro.h

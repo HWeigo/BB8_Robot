@@ -108,6 +108,8 @@ int main(void)
   MX_TIM14_Init();
   MX_IWDG_Init();
   MX_TIM4_Init();
+  MX_TIM5_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
 
   HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_3);

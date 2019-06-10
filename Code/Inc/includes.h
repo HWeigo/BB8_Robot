@@ -16,11 +16,12 @@
 #include <time.h>
 #include <usart.h>
 
-#include "main.h"
-#include "stm32f4xx_hal.h"
 #include "FreeRTOS.h"
 #include "task.h"
 #include "cmsis_os.h"
+
+#include "main.h"
+#include "stm32f4xx_hal.h"
 #include "dma.h"
 #include "gpio.h"
 #include "tim.h"
@@ -31,6 +32,7 @@
 #include "Task_servo.h"
 #include "Task_gyro.h"
 #include "Task_ps2.h"
+#include "Task_encoder.h"
 
 #include "Drivers_uartgyro.h"
 
