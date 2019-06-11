@@ -9,9 +9,9 @@
 
 #include "includes.h"
 
-//void Task_LED(void const * argument);
-//void InitLED(void);
-//uint8_t humanDetect(void);
+
+
+void Task_encoder(void const * argument)£»
 
 #endif /*__ TASK_LED_H */
 
