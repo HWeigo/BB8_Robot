@@ -3,8 +3,8 @@
   * File Name          : Task_gyro.c
   * Description        : 处理imu数据，将其转化为真实数据（最高优先级）
 	* 选用USART1作为串口。
-	* RX -> PA9(TX)
-	* TX -> PA10(RX)
+	* RX -> PA9
+	* TX -> PA10
   ******************************************************************************
 */
 
@@ -18,13 +18,23 @@ float gyroXspeed,gyroYspeed,gyroZspeed;
 float gyroXacceleration,gyroYacceleration,gyroZacceleration;
 float temperature;
 
+/*************编码器计数*****/
+static uint32_t encoder;
 
-uint8_t isHumanNearby=0;
+uint8_t debug_flag=0;
 void Task_GRYO(void const * argument)
 {
   while(1)
   {
-		isHumanNearby = humanDetect();
+		debug_flag = humanDetect();
+		
+/********暂时测试编码器读数***********/
+		if(__HAL_TIM_DIRECTION_STATUS(&htim5)==0)	encoder=encoder+__HAL_TIM_GetCounter(&htim5);
+		else if(__HAL_TIM_GetCounter(&htim5)!=0)	encoder=encoder-(0xFFFF-__HAL_TIM_GetCounter(&htim5)+1);
+		//printf("%d\n",i);
+		__HAL_TIM_SetCounter(&htim5,0);
+//		vTaskDelay(100);
+/********暂时测试编码器读数***********/
 		
     if(gyroIsReady && !sumCheck())
 		{
@@ -57,7 +67,7 @@ void Task_GRYO(void const * argument)
 					
 			gyroIsReady = 0;
 		}
-		osDelay(10);
+		osDelay(100);//编码器测试暂时改为100，原为10
   }
 }
 

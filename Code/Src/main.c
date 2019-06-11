@@ -49,7 +49,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "includes.h"
 
-
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
@@ -121,8 +120,6 @@ int main(void)
 	
 	HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);
 	HAL_TIM_Encoder_Start(&htim5, TIM_CHANNEL_ALL);
-	
-	
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */

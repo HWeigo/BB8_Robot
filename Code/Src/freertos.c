@@ -109,11 +109,11 @@ void MX_FREERTOS_Init(void) {
   TASK_GRYOHandle = osThreadCreate(osThread(TASK_GRYO), NULL);
 
   /* definition and creation of TASK_SERVO */
-  osThreadDef(TASK_SERVO, Task_Servo, osPriorityBelowNormal, 0, 128);
+  osThreadDef(TASK_SERVO, Task_Servo, osPriorityNormal, 0, 128);
   TASK_SERVOHandle = osThreadCreate(osThread(TASK_SERVO), NULL);
 
   /* definition and creation of TASK_PS2 */
-  osThreadDef(TASK_PS2, Task_ps2, osPriorityHigh, 0, 1024);
+  osThreadDef(TASK_PS2, Task_ps2, osPriorityHigh, 0, 512);
   TASK_PS2Handle = osThreadCreate(osThread(TASK_PS2), NULL);
 
   /* definition and creation of TASK_ENCODER */
@@ -178,14 +178,14 @@ void MX_FREERTOS_Init(void) {
 //  /* USER CODE END Task_ps2 */
 //}
 
-///* Task_encoder function */
+/* Task_encoder function */
 //void Task_encoder(void const * argument)
 //{
 //  /* USER CODE BEGIN Task_encoder */
 //  /* Infinite loop */
 //  for(;;)
 //  {
-//    osDelay(1);
+//    osDelay(10);
 //  }
 //  /* USER CODE END Task_encoder */
 //}
