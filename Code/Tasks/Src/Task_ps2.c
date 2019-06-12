@@ -25,11 +25,14 @@ uint8_t key;
 int16_t speed = 0;
 int16_t swerve = 0;
 int16_t servoSwerve = 0;
+
+uint8_t cnt10ms = 0;
+int32_t encoderL= 0, encoderR = 0;
 void Task_ps2(void const * argument)
 {
   /* USER CODE BEGIN Task_ps2 */
   /* Infinite loop */
-	HAL_Delay(1000);
+	HAL_Delay(1500);
   while(1)
   {
 		//由于PS2手柄信号接收需要us级别延迟，故需要将所有中断关闭！！否则会导致系统宕机
@@ -40,7 +43,25 @@ void Task_ps2(void const * argument)
 		swerve = (PS2_AnologData(PSS_LX)-127)-1;	
 		servoSwerve = (PS2_AnologData(PSS_RX)-127)-1;
 		
+		
+		if(cnt10ms == 4)
+		{
+		if(__HAL_TIM_DIRECTION_STATUS(&htim5)==0)	encoderL=__HAL_TIM_GetCounter(&htim5);
+		else if(__HAL_TIM_GetCounter(&htim5)!=0)	encoderL=-(0xFFFF-__HAL_TIM_GetCounter(&htim5)+1);
+		if(__HAL_TIM_DIRECTION_STATUS(&htim3)==0)	encoderR=__HAL_TIM_GetCounter(&htim3);
+		else if(__HAL_TIM_GetCounter(&htim3)!=0)	encoderR=-(0xFFFF-__HAL_TIM_GetCounter(&htim3)+1);		
+		
+		
+		__HAL_TIM_SetCounter(&htim5,0);
+		__HAL_TIM_SetCounter(&htim3,0);
+			
+			cnt10ms = 0;
+		}
+		
 		  HAL_NVIC_EnableIRQ(DMA2_Stream2_IRQn); //重启使能中断
+		
+		
+		++cnt10ms;
     osDelay(10);
   }
   /* USER CODE END Task_ps2 */
