@@ -14,6 +14,13 @@
 #include "includes.h"
 
 
+extern uint8_t gyroIsReady;
+extern uint8_t gyroBuffer[];
+float gyroXAngle,gyroYAngle,gyroZAngle;
+float gyroXspeed,gyroYspeed,gyroZspeed;
+float gyroXacceleration,gyroYacceleration,gyroZacceleration;
+float temperature;
+
 //舵机型号选择 
 //#define SG90
 #define MG995
@@ -72,8 +79,8 @@ void setMotor2Speed(float speed_f)
 	/**************************************************************************/
 //PID控制参数
 float Zero_point=0.5;
-float Balance_Kp=3.6; //6.0f
-float Balance_Kd=1.0;
+float Balance_Kp=0.0; //6.0f
+float Balance_Kd=6.0;
 
 #define MIN(A,B) ((A)<(B)?(A):(B))
 #define MAX(A,B) ((A)>(B)?(A):(B))
@@ -104,6 +111,42 @@ void Task_Servo(void const * argument)
 
   while(1)
   {
+	/**************************************************************************/
+		if(gyroIsReady && !sumCheck())
+		{
+//			printf("Processing gyro.");      //开苃后dubug有问题，未解决
+			switch(gyroBuffer[1])
+			{
+				case 0x51:
+				{
+					gyroXacceleration = ((short)(gyroBuffer[3]<<8)|gyroBuffer[2])/32768.0f*16.0f;
+					gyroYacceleration = ((short)(gyroBuffer[5]<<8)|gyroBuffer[4])/32768.0f*16.0f;
+					gyroZacceleration = ((short)(gyroBuffer[7]<<8)|gyroBuffer[6])/32768.0f*16.0f;
+					
+					temperature = ((short)(gyroBuffer[9]<<8|gyroBuffer[8]))/340.0f + 36.25f;
+				}break;
+				case 0x52:
+				{
+					gyroXspeed = ((short)(gyroBuffer[3]<<8)|gyroBuffer[2])/32768.0f*2000.0f;
+					gyroYspeed = ((short)(gyroBuffer[5]<<8)|gyroBuffer[4])/32768.0f*2000.0f;
+					gyroZspeed = ((short)(gyroBuffer[7]<<8)|gyroBuffer[6])/32768.0f*2000.0f;
+				}break;
+				case 0x53:
+				{
+					gyroXAngle = ((short)(0x00|gyroBuffer[3]<<8|gyroBuffer[2]))/32768.0f*180.0f;
+					gyroYAngle = ((short)(0x00|gyroBuffer[5]<<8|gyroBuffer[4]))/32768.0f*180.0f;
+					gyroZAngle = ((short)(0x00|gyroBuffer[7]<<8|gyroBuffer[6]))/32768.0f*180.0f;
+				}break;
+				default:
+					Error_Handler();
+			}
+		}
+					
+			gyroIsReady = 0;
+		
+		
+		
+		
 		
 	/**************************************************************************/
 		if(PS2_RedLight())
@@ -119,7 +162,7 @@ void Task_Servo(void const * argument)
 		{
 			//Balance_Pwm = - MAX(MIN(balance(gyroYAngle,gyroYspeed),100),-100); 
 			Balance_Pwm = - balance(gyroYAngle,gyroYspeed);
-			MINMAX(Balance_Pwm,-100,100);
+			MINMAX(Balance_Pwm,-90,90);
 			
 			setMotor1Speed(Balance_Pwm); //负值有问题
 			setMotor2Speed(Balance_Pwm);
@@ -152,10 +195,23 @@ void Task_Servo(void const * argument)
 			}
 		}
 
-    osDelay(15);
+		
+    osDelay(5);
   }
   /* USER CODE END Task_Servo */
 }
+
+uint8_t minus;
+uint8_t sumCheck(void)
+{
+		minus = gyroBuffer[10];
+		for(int i=0;i<10;i++)
+		{
+			minus -= gyroBuffer[i];
+		}
+		return minus;
+}
+
 
 /***********PD直立环*************/
 float balance(float Angle,float Gyro)

@@ -18,11 +18,15 @@ uint8_t gyroIsReady = 0;
 
 void gyroUartRxCpltCallback(void)
 {
+	if(HAL_UART_Receive_DMA(&GYRO_UART, &tmp_gyro, 1) != HAL_OK)
+	{
+		Error_Handler();
+	}
 	if(gyro_receiving)
 	{
 		gyroBuffer[gyroBuffercnt] = tmp_gyro;
 		gyroBuffercnt++;
-		if(gyroBuffercnt > 20)
+		if(gyroBuffercnt > 13)
 		{
 			gyro_receiving = 0;
 			gyroBuffercnt = 0;
@@ -43,10 +47,7 @@ void gyroUartRxCpltCallback(void)
 			++gyroBuffercnt;
 		}
 	}
-	if(HAL_UART_Receive_DMA(&GYRO_UART, &tmp_gyro, 1) != HAL_OK)
-		{
-			Error_Handler();
-	  }
+
 }
 
 
