@@ -16,6 +16,11 @@ uint8_t gyroBuffercnt = 0;
 uint8_t gyroID = 0;
 uint8_t gyroIsReady = 0;
 
+float gyroXAngle,gyroYAngle,gyroZAngle;
+float gyroXspeed,gyroYspeed,gyroZspeed;
+float gyroXacceleration,gyroYacceleration,gyroZacceleration;
+float temperature;
+
 void gyroUartRxCpltCallback(void)
 {
 	if(gyro_receiving)
@@ -47,6 +52,37 @@ void gyroUartRxCpltCallback(void)
 		{
 			Error_Handler();
 	  }
+		 if(gyroIsReady && !sumCheck())
+		{
+//			printf("Processing gyro.");      //开苃后dubug有问题，未解决
+			switch(gyroBuffer[1])
+			{
+				case 0x51:
+				{
+//					gyroXacceleration = ((short)(gyroBuffer[3]<<8)|gyroBuffer[2])/32768.0f*16.0f;
+//					gyroYacceleration = ((short)(gyroBuffer[5]<<8)|gyroBuffer[4])/32768.0f*16.0f;
+//					gyroZacceleration = ((short)(gyroBuffer[7]<<8)|gyroBuffer[6])/32768.0f*16.0f;
+					
+					temperature = ((short)(gyroBuffer[9]<<8|gyroBuffer[8]))/340.0f + 36.25f;
+				}break;
+				case 0x52:
+				{
+//					gyroXspeed = ((short)(gyroBuffer[3]<<8)|gyroBuffer[2])/32768.0f*2000.0f;
+					gyroYspeed = ((short)(gyroBuffer[5]<<8)|gyroBuffer[4])/32768.0f*2000.0f;
+//					gyroZspeed = ((short)(gyroBuffer[7]<<8)|gyroBuffer[6])/32768.0f*2000.0f;
+				}break;
+				case 0x53:
+				{
+					gyroXAngle = ((short)(0x00|gyroBuffer[3]<<8|gyroBuffer[2]))/32768.0f*180.0f;
+					gyroYAngle = ((short)(0x00|gyroBuffer[5]<<8|gyroBuffer[4]))/32768.0f*180.0f;
+					gyroZAngle = ((short)(0x00|gyroBuffer[7]<<8|gyroBuffer[6]))/32768.0f*180.0f;
+				}break;
+				default:
+					Error_Handler();
+			}
+					
+			gyroIsReady = 0;
+		}
 }
 
 
