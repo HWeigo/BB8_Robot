@@ -166,7 +166,7 @@ void Task_Servo(void const * argument)
 //				break;
 //		}
 
-    osDelay(50);
+    osDelay(20);
   }
   /* USER CODE END Task_Servo */
 }

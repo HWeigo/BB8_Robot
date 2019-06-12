@@ -27,7 +27,7 @@ void Task_encoder(void const * argument)
 		__HAL_TIM_SetCounter(&htim5,0);
 		__HAL_TIM_SetCounter(&htim3,0);
 		
-		vTaskDelayUntil( &xLastWakeTime, ( 10 / portTICK_RATE_MS ) ); //进入阻塞态50ms
+		vTaskDelayUntil( &xLastWakeTime, ( 45 / portTICK_RATE_MS ) ); //进入阻塞态50ms
     //osDelay(10);
   }
   /* USER CODE END Task_encoder */
