@@ -40,58 +40,47 @@ extern uint8_t key;
 extern int16_t servoSwerve;
 extern int16_t speed;
 
-//#define setMotor1Speed(x) \
-//if(x>=0)\
-//{\
-//	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 100*x/128);\
-//	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, 0);\
-//}\
-//else\
-//{\
-//	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 0);\
-//	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, -100*x/128);\
-//}
-void setMotor1Speed(int16_t speed_f)
+
+void setMotor1Speed(float speed_f)
 {
 	if(speed_f >= 0)
 	{
-	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 100*speed_f/128);
+	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, speed_f);
 	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, 0);
 	}
 	else
 	{	
 	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 0);
-	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, -100*speed_f/128);
+	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, -speed_f);
 	}
 }
 
-//#define setMotor2Speed(x) \
-//if(x<=0)\
-//{\
-//	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, -x/128*100);\
-//	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_4, 0);\
-//}\
-//else\
-//{\
-//	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, 0);\
-//	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_4, x/128*100);\
-//}
-void setMotor2Speed(int16_t speed_f)
+
+void setMotor2Speed(float speed_f)
 {
 	if(speed_f >= 0)
 	{
-	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, 100*speed_f/128);
+	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, speed_f);
 	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_4, 0);
 	}
 	else
 	{	
 	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, 0);
-	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_4, -100*speed_f/128);
+	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_4, -speed_f);
 	}
 }
 	/**************************************************************************/
+//PID控制参数
+float Zero_point=0.5;
+float Balance_Kp=0.0; //6.0f
+float Balance_Kd=-10.0;
 
+#define MIN(A,B) ((A)<(B)?(A):(B))
+#define MAX(A,B) ((A)>(B)?(A):(B))
+#define MINMAX(value, min, max) (value) = ((value) < (min)) ? (min) : ((value) > (max) ? (max) : (value))
 
+extern float gyroYAngle,gyroYspeed;
+float Balance_Pwm=0,Velocity_Pwm,Turn_Pwm;
 void Task_Servo(void const * argument)
 {
 	/**************************************************************************/
@@ -118,13 +107,23 @@ void Task_Servo(void const * argument)
 	/**************************************************************************/
 		if(PS2_RedLight())
 		{
-			setMotor1Speed(speed);
-			setMotor2Speed(speed);
-	//		setMotor2Speed(50);
+			setMotor1Speed(100*speed/128);
+			setMotor2Speed(100*speed/128);
 	//		__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 100);
 	//		__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, 0);
 		}
 	/**************************************************************************/		
+		
+		if(!PS2_RedLight())
+		{
+			//Balance_Pwm = - MAX(MIN(balance(gyroYAngle,gyroYspeed),100),-100); 
+			Balance_Pwm = - balance(gyroYAngle,gyroYspeed);
+			MINMAX(Balance_Pwm,-100,100);
+			
+			setMotor1Speed(Balance_Pwm); //负值有问题
+			setMotor2Speed(Balance_Pwm);
+
+		}
 		
 		if(key == 0 && servoSwerve == 0)
 		{
@@ -171,3 +170,37 @@ void Task_Servo(void const * argument)
   }
   /* USER CODE END Task_Servo */
 }
+
+/***********PD直立环*************/
+float balance(float Angle,float Gyro)
+{  
+   float Gap;
+	 int balance;
+	 Gap=Angle-Zero_point;                     //===求出平衡的角度中值 和机械相关
+	 balance=Balance_Kp*Gap+Gyro*Balance_Kd;   //===计算平衡控制的电机PWM  PD控制   kp是P系数 kd是D系数 
+	 return balance;
+}
+/***********************************/
+
+//#define setMotor1Speed(x) \
+//if(x>=0)\
+//{\
+//	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 100*x/128);\
+//	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, 0);\
+//}\
+//else\
+//{\
+//	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 0);\
+//	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, -100*x/128);\
+//}
+//#define setMotor2Speed(x) \
+//if(x<=0)\
+//{\
+//	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, -x/128*100);\
+//	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_4, 0);\
+//}\
+//else\
+//{\
+//	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, 0);\
+//	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_4, x/128*100);\
+//}
