@@ -11,20 +11,20 @@
 #include "includes.h"
 
 
-extern uint8_t gyroIsReady;
-extern uint8_t gyroBuffer[];
+//extern uint8_t gyroIsReady;
+//extern uint8_t gyroBuffer[];
 //float gyroXAngle,gyroYAngle,gyroZAngle;
 //float gyroXspeed,gyroYspeed,gyroZspeed;
 //float gyroXacceleration,gyroYacceleration,gyroZacceleration;
 //float temperature;
 
-uint8_t debug_flag=0;
-void Task_GRYO(void const * argument)
-{
-  while(1)
-  {
-		//debug_flag = humanDetect();
-		
+//uint8_t debug_flag=0;
+//void Task_GRYO(void const * argument)
+//{
+//  while(1)
+//  {
+//		//debug_flag = humanDetect();
+//		
 //    if(gyroIsReady && !sumCheck())
 //		{
 ////			printf("Processing gyro.");      //开苃后dubug有问题，未解决
@@ -56,18 +56,18 @@ void Task_GRYO(void const * argument)
 //					
 //			gyroIsReady = 0;
 //		}
-		osDelay(30);//编码器测试暂时改为100，原为10
-  }
-}
+//		osDelay(10);//编码器测试暂时改为100，原为10
+//  }
+//}
 
 //校核位检验，Sum=0x55+0x52+wxH+wxL+wyH+wyL+wzH+wzL+TH+TL
-uint8_t minus;
-uint8_t sumCheck(void)
-{
-		minus = gyroBuffer[10];
-		for(int i=0;i<10;i++)
-		{
-			minus -= gyroBuffer[i];
-		}
-		return minus;
-}
+//uint8_t minus;
+//uint8_t sumCheck(void)
+//{
+//		minus = gyroBuffer[10];
+//		for(int i=0;i<10;i++)
+//		{
+//			minus -= gyroBuffer[i];
+//		}
+//		return minus;
+//}

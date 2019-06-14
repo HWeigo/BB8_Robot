@@ -11,7 +11,7 @@
 
 
 
-void Task_encoder(void const * argument);
+//void Task_encoder(void const * argument)£»
 
 #endif /*__ TASK_LED_H */
 

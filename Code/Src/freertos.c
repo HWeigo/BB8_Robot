@@ -105,11 +105,11 @@ void MX_FREERTOS_Init(void) {
   TASK_LEDHandle = osThreadCreate(osThread(TASK_LED), NULL);
 
   /* definition and creation of TASK_GRYO */
-  osThreadDef(TASK_GRYO, Task_GRYO, osPriorityBelowNormal, 0, 256);
-  TASK_GRYOHandle = osThreadCreate(osThread(TASK_GRYO), NULL);
+//  osThreadDef(TASK_GRYO, Task_GRYO, osPriorityNormal, 0, 256);
+//  TASK_GRYOHandle = osThreadCreate(osThread(TASK_GRYO), NULL);
 
   /* definition and creation of TASK_SERVO */
-  osThreadDef(TASK_SERVO, Task_Servo, osPriorityNormal, 0, 128);
+  osThreadDef(TASK_SERVO, Task_Servo, osPriorityNormal, 0, 512);
   TASK_SERVOHandle = osThreadCreate(osThread(TASK_SERVO), NULL);
 
   /* definition and creation of TASK_PS2 */
@@ -117,8 +117,8 @@ void MX_FREERTOS_Init(void) {
   TASK_PS2Handle = osThreadCreate(osThread(TASK_PS2), NULL);
 
   /* definition and creation of TASK_ENCODER */
-  osThreadDef(TASK_ENCODER, Task_encoder, osPriorityAboveNormal, 0, 256);
-  TASK_ENCODERHandle = osThreadCreate(osThread(TASK_ENCODER), NULL);
+//  osThreadDef(TASK_ENCODER, Task_encoder, osPriorityAboveNormal, 0, 256);
+//  TASK_ENCODERHandle = osThreadCreate(osThread(TASK_ENCODER), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */

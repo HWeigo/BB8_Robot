@@ -3,7 +3,7 @@
 
 #include "includes.h"
 
-void Task_GRYO(void const * argument);
-uint8_t sumCheck(void);
+//void Task_GRYO(void const * argument);
+//uint8_t sumCheck(void);
 
 #endif
