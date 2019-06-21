@@ -45,7 +45,7 @@ void gyroUartRxCpltCallback(void)
 				if(gyroBuffer[1] == 0x53)
 				{
 					gyroXAngle = (0x00|(gyroBuffer[3]<<8)|(gyroBuffer[2]))/32768.0f*180.0f;
-					gyroYAngle = (0x00|(gyroBuffer[5]<<8)|(gyroBuffer[4]))/32768.0f*180.0f;
+					gyroYAngle = ((short)(0x00|(gyroBuffer[5]<<8)|(gyroBuffer[4])))/32768.0f*180.0f;
 					gyroZAngle = (0x00|(gyroBuffer[7]<<8)|(gyroBuffer[6]))/32768.0f*180.0f;
 				}
 				else if(gyroBuffer[1] == 0x52)

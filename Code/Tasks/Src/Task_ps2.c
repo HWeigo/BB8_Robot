@@ -48,9 +48,14 @@ void Task_ps2(void const * argument)
 		{
 			if(__HAL_TIM_DIRECTION_STATUS(&htim5)==0)	encoderL=__HAL_TIM_GetCounter(&htim5);
 			else if(__HAL_TIM_GetCounter(&htim5)!=0)	encoderL=-(0xFFFF-__HAL_TIM_GetCounter(&htim5)+1);
+	
+
 			if(__HAL_TIM_DIRECTION_STATUS(&htim3)==0)	encoderR=__HAL_TIM_GetCounter(&htim3);
 			else if(__HAL_TIM_GetCounter(&htim3)!=0)	encoderR=-(0xFFFF-__HAL_TIM_GetCounter(&htim3)+1);		
 			
+			if((encoderL>-3 && encoderL<3) || encoderL>2000 || encoderL<-2000) encoderL = 0;
+			if((encoderR>-3 && encoderR<3) || encoderR>2000 || encoderR<-2000) encoderR = 0;
+		
 			
 			__HAL_TIM_SetCounter(&htim5,0);
 			__HAL_TIM_SetCounter(&htim3,0);

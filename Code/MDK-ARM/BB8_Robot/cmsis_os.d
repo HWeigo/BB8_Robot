@@ -1,9 +1,9 @@
 bb8_robot\cmsis_os.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c
-bb8_robot\cmsis_os.o: D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\Bin\..\include\string.h
+bb8_robot\cmsis_os.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 bb8_robot\cmsis_os.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 bb8_robot\cmsis_os.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-bb8_robot\cmsis_os.o: D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\Bin\..\include\stddef.h
-bb8_robot\cmsis_os.o: D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\Bin\..\include\stdint.h
+bb8_robot\cmsis_os.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+bb8_robot\cmsis_os.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 bb8_robot\cmsis_os.o: ../Inc/FreeRTOSConfig.h
 bb8_robot\cmsis_os.o: ../Inc/main.h
 bb8_robot\cmsis_os.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
