@@ -100,6 +100,7 @@ void MX_FREERTOS_Init(void) {
   osThreadDef(TASK_LED, Task_LED, osPriorityLow, 0, 128);
   TASK_LEDHandle = osThreadCreate(osThread(TASK_LED), NULL);
 
+<<<<<<< HEAD
   /* definition and creation of TASK_CONTROL */
   osThreadDef(TASK_CONTROL, Task_Control, osPriorityNormal, 0, 128);
   TASK_CONTROLHandle = osThreadCreate(osThread(TASK_CONTROL), NULL);
@@ -107,6 +108,23 @@ void MX_FREERTOS_Init(void) {
   /* definition and creation of TASK_TIM_2MS */
   osThreadDef(TASK_TIM_2MS, Task_tim_2ms, osPriorityHigh, 0, 512);
   TASK_TIM_2MSHandle = osThreadCreate(osThread(TASK_TIM_2MS), NULL);
+=======
+  /* definition and creation of TASK_GRYO */
+//  osThreadDef(TASK_GRYO, Task_GRYO, osPriorityNormal, 0, 256);
+//  TASK_GRYOHandle = osThreadCreate(osThread(TASK_GRYO), NULL);
+
+  /* definition and creation of TASK_SERVO */
+  osThreadDef(TASK_SERVO, Task_Servo, osPriorityNormal, 0, 512);
+  TASK_SERVOHandle = osThreadCreate(osThread(TASK_SERVO), NULL);
+
+  /* definition and creation of TASK_PS2 */
+  osThreadDef(TASK_PS2, Task_ps2, osPriorityHigh, 0, 512);
+  TASK_PS2Handle = osThreadCreate(osThread(TASK_PS2), NULL);
+
+  /* definition and creation of TASK_ENCODER */
+//  osThreadDef(TASK_ENCODER, Task_encoder, osPriorityAboveNormal, 0, 256);
+//  TASK_ENCODERHandle = osThreadCreate(osThread(TASK_ENCODER), NULL);
+>>>>>>> master
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */

@@ -9,7 +9,11 @@
 
 #include "includes.h"
 
+<<<<<<< HEAD:Code/Tasks/Inc/Task_control.h
 void Task_Control(void const * argument);
+=======
+void Task_Servo(void const * argument);
+>>>>>>> master:Code/Tasks/Inc/Task_servo.h
 void setMotor1Speed(float speed_f);
 void setMotor2Speed(float speed_f);
 float balance(float Angle,float Gyro);

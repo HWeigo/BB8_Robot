@@ -29,9 +29,16 @@ int16_t servoSwerve = 0;
 
 uint8_t cnt10ms = 0;
 int32_t encoderL= 0, encoderR = 0;
+<<<<<<< HEAD:Code/Tasks/Src/Task_tim_10ms.c
 void Task_tim_2ms(void const * argument)
 {
 
+=======
+void Task_ps2(void const * argument)
+{
+  /* USER CODE BEGIN Task_ps2 */
+  /* Infinite loop */
+>>>>>>> master:Code/Tasks/Src/Task_ps2.c
 	HAL_Delay(1500);
   while(1)
   {

@@ -1,10 +1,10 @@
 bb8_robot\task_gyro.o: ..\Tasks\Src\Task_gyro.c
 bb8_robot\task_gyro.o: ../Inc/includes.h
-bb8_robot\task_gyro.o: D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\Bin\..\include\math.h
-bb8_robot\task_gyro.o: D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\Bin\..\include\stdlib.h
-bb8_robot\task_gyro.o: D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\Bin\..\include\stdint.h
-bb8_robot\task_gyro.o: D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\Bin\..\include\stdio.h
-bb8_robot\task_gyro.o: D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\Bin\..\include\time.h
+bb8_robot\task_gyro.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+bb8_robot\task_gyro.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+bb8_robot\task_gyro.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+bb8_robot\task_gyro.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+bb8_robot\task_gyro.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h
 bb8_robot\task_gyro.o: ../Inc/usart.h
 bb8_robot\task_gyro.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 bb8_robot\task_gyro.o: ../Inc/stm32f4xx_hal_conf.h
@@ -37,7 +37,7 @@ bb8_robot\task_gyro.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 bb8_robot\task_gyro.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 bb8_robot\task_gyro.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 bb8_robot\task_gyro.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-bb8_robot\task_gyro.o: D:\RoboMasters\Keil ARM SETUP\ARM\ARMCC\Bin\..\include\stddef.h
+bb8_robot\task_gyro.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 bb8_robot\task_gyro.o: ../Inc/FreeRTOSConfig.h
 bb8_robot\task_gyro.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 bb8_robot\task_gyro.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
