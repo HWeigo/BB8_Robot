@@ -10,6 +10,11 @@
 #include "includes.h"
 
 void Task_Servo(void const * argument);
+void setMotor1Speed(float speed_f);
+void setMotor2Speed(float speed_f);
+float balance(float Angle,float Gyro);
+float velocity(int32_t encoder_left,int32_t encoder_right,float Target_Velocity);
+
 
 typedef enum
 {
