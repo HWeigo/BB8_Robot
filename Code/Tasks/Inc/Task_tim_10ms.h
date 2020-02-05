@@ -40,7 +40,7 @@
 #define PSS_LY 8
 
 
-void Task_ps2(void const * argument);
+void Task_tim_2ms(void const * argument);
 void delay10us(uint32_t n);
 void PS2_Cmd(uint8_t CMD);
 uint8_t PS2_RedLight(void);

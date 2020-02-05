@@ -1,7 +1,8 @@
 /**
   ******************************************************************************
-  * File Name          : Task_ps2.c
-  * Description        : 读取ps2数据，将其转化为真实数据（最高优先级）
+  * File Name          : Task_tim_10ms.c
+  * Description        : 用于10ms精准定时，每跑一次读取一遍ps2数据，将其转化为 
+	  真实数据。同时，每间隔50ms读取并刷新编码器的读数。 （最高优先级）
 	* PS2数据读取需要用到us级别定时。其具体帧内容参见ps解码通讯手册。
 	* DI/DAT  -> PB12
 	* DO/CMD  -> PB13
@@ -28,10 +29,9 @@ int16_t servoSwerve = 0;
 
 uint8_t cnt10ms = 0;
 int32_t encoderL= 0, encoderR = 0;
-void Task_ps2(void const * argument)
+void Task_tim_2ms(void const * argument)
 {
-  /* USER CODE BEGIN Task_ps2 */
-  /* Infinite loop */
+
 	HAL_Delay(1500);
   while(1)
   {
@@ -85,19 +85,6 @@ void delay_us(uint16_t us)
 
     HAL_TIM_Base_Stop(&htim14);
 }
-
-//static uint8_t  fac_us=0;//us延时倍乘数
-//static uint16_t fac_ms=0;//ms延时倍乘数
-//初始化延迟函数
-//SYSTICK的时钟固定为HCLK时钟的1/8
-//SYSCLK:系统时钟
-//void delay_init(uint8_t SYSCLK)                                                 //SYSCLK用的是TIM1,InternalClock被FreeRTOS占用
-//{
-//	SysTick->CTRL&=0xfffffffb;//bit2清空,选择外部时钟  HCLK/8                     //bit2为1 外部时钟源？   HAL_SYSTICK_CLKSourceConfig(SYSTICK_CLKSOURCE_HCLK)？？
-//	fac_us=SYSCLK/8;		                                                          //SYSCLK = 96MHz, HCLK = 96MHz
-//	fac_ms=(uint16_t)fac_us*1000;
-//}	
-
 
 uint8_t Data[9]={0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00}; //数据存储数组
 uint8_t Comd[2]={0x01,0x42};	//开始命令。请求数据
@@ -221,28 +208,3 @@ void PS2_ClearData(void)
 		Data[a]=0x00;
 }
 
-//uint32_t cnt10us = 0;
-//void delay10us(uint32_t n)
-//{
-//	HAL_TIM_Base_Start_IT(&htim3);
-//	while(cnt10us < n)
-//	{
-////		osDelay(1);
-//	}
-//	HAL_TIM_Base_Stop_IT(&htim3);
-//	cnt10us = 0;
-//}
-//void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-//{
-//  /* USER CODE BEGIN Callback 0 */
-//  if (htim->Instance == TIM1) {
-//    HAL_IncTick();
-//  }
-//  /* USER CODE END Callback 0 */
-//  if (htim==(&htim3)) {
-//    ++cnt10us;
-//  }
-//  /* USER CODE BEGIN Callback 1 */
-
-//  /* USER CODE END Callback 1 */
-//}

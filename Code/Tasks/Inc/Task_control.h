@@ -9,7 +9,7 @@
 
 #include "includes.h"
 
-void Task_Servo(void const * argument);
+void Task_Control(void const * argument);
 void setMotor1Speed(float speed_f);
 void setMotor2Speed(float speed_f);
 float balance(float Angle,float Gyro);
