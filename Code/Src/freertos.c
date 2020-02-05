@@ -55,10 +55,8 @@
 
 /* Variables -----------------------------------------------------------------*/
 osThreadId TASK_LEDHandle;
-osThreadId TASK_GRYOHandle;
-osThreadId TASK_SERVOHandle;
-osThreadId TASK_PS2Handle;
-osThreadId TASK_ENCODERHandle;
+osThreadId TASK_CONTROLHandle;
+osThreadId TASK_TIM_2MSHandle;
 
 /* USER CODE BEGIN Variables */
 
@@ -66,10 +64,8 @@ osThreadId TASK_ENCODERHandle;
 
 /* Function prototypes -------------------------------------------------------*/
 void Task_LED(void const * argument);
-void Task_GRYO(void const * argument);
-void Task_Servo(void const * argument);
-void Task_ps2(void const * argument);
-void Task_encoder(void const * argument);
+void Task_Control(void const * argument);
+void Task_tim_2ms(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -104,6 +100,15 @@ void MX_FREERTOS_Init(void) {
   osThreadDef(TASK_LED, Task_LED, osPriorityLow, 0, 128);
   TASK_LEDHandle = osThreadCreate(osThread(TASK_LED), NULL);
 
+<<<<<<< HEAD
+  /* definition and creation of TASK_CONTROL */
+  osThreadDef(TASK_CONTROL, Task_Control, osPriorityNormal, 0, 128);
+  TASK_CONTROLHandle = osThreadCreate(osThread(TASK_CONTROL), NULL);
+
+  /* definition and creation of TASK_TIM_2MS */
+  osThreadDef(TASK_TIM_2MS, Task_tim_2ms, osPriorityHigh, 0, 512);
+  TASK_TIM_2MSHandle = osThreadCreate(osThread(TASK_TIM_2MS), NULL);
+=======
   /* definition and creation of TASK_GRYO */
 //  osThreadDef(TASK_GRYO, Task_GRYO, osPriorityNormal, 0, 256);
 //  TASK_GRYOHandle = osThreadCreate(osThread(TASK_GRYO), NULL);
@@ -119,6 +124,7 @@ void MX_FREERTOS_Init(void) {
   /* definition and creation of TASK_ENCODER */
 //  osThreadDef(TASK_ENCODER, Task_encoder, osPriorityAboveNormal, 0, 256);
 //  TASK_ENCODERHandle = osThreadCreate(osThread(TASK_ENCODER), NULL);
+>>>>>>> master
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -134,60 +140,36 @@ void MX_FREERTOS_Init(void) {
 //{
 
 //  /* USER CODE BEGIN Task_LED */
-////////  /* Infinite loop */
-////////  for(;;)
-////////  {
-////////    osDelay(1);
-////////  }
+//////////  /* Infinite loop */
+//////////  for(;;)
+//////////  {
+//////////    osDelay(1);
+//////////  }
 //  /* USER CODE END Task_LED */
 //}
 
-///* Task_GRYO function */
-//void Task_GRYO(void const * argument)
+///* Task_Control function */
+//void Task_Control(void const * argument)
 //{
-//  /* USER CODE BEGIN Task_GRYO */
-////////  /* Infinite loop */
-////////  for(;;)
-////////  {
-////////    osDelay(1);
-////////  }
-//  /* USER CODE END Task_GRYO */
-//}
-
-///* Task_Servo function */
-//void Task_Servo(void const * argument)
-//{
-//  /* USER CODE BEGIN Task_Servo */
-////////  /* Infinite loop */
-////////  for(;;)
-////////  {
-////////    osDelay(1);
-////////  }
-//  /* USER CODE END Task_Servo */
-//}
-
-///* Task_ps2 function */
-//void Task_ps2(void const * argument)
-//{
-//  /* USER CODE BEGIN Task_ps2 */
-////////  /* Infinite loop */
-////////  for(;;)
-////////  {
-////////    osDelay(1);
-////////  }
-//  /* USER CODE END Task_ps2 */
-//}
-
-/* Task_encoder function */
-//void Task_encoder(void const * argument)
-//{
-//  /* USER CODE BEGIN Task_encoder */
+//  /* USER CODE BEGIN Task_Control */
 //  /* Infinite loop */
 //  for(;;)
 //  {
-//    osDelay(10);
+//    osDelay(1);
 //  }
-//  /* USER CODE END Task_encoder */
+//  /* USER CODE END Task_Control */
+//}
+
+///* Task_tim_2ms function */
+//void Task_tim_2ms(void const * argument)
+//{
+//  /* USER CODE BEGIN Task_tim_2ms */
+//  /* Infinite loop */
+//  for(;;)
+//  {
+//    osDelay(1);
+//  }
+//  /* USER CODE END Task_tim_2ms */
 //}
 
 /* USER CODE BEGIN Application */

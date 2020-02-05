@@ -57,8 +57,6 @@ bb8_robot\freertos.o: ../Inc/tim.h
 bb8_robot\freertos.o: ../Inc/iwdg.h
 bb8_robot\freertos.o: ..\Tasks\Inc\Task_LED.h
 bb8_robot\freertos.o: ../Inc/includes.h
-bb8_robot\freertos.o: ..\Tasks\Inc\Task_servo.h
-bb8_robot\freertos.o: ..\Tasks\Inc\Task_gyro.h
-bb8_robot\freertos.o: ..\Tasks\Inc\Task_ps2.h
-bb8_robot\freertos.o: ..\Tasks\Inc\Task_encoder.h
+bb8_robot\freertos.o: ..\Tasks\Inc\Task_control.h
+bb8_robot\freertos.o: ..\Tasks\Inc\Task_tim_10ms.h
 bb8_robot\freertos.o: ..\Tasks\Inc\Drivers_uartgyro.h
